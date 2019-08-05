@@ -1,0 +1,164 @@
+/* this CSS file is included with every page, and defines global styles for nav, container, footer, etc. */
+
+/* global styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 { line-height: 1.2;  letter-spacing: -.075rem;}
+h2 { line-height: 1.25; letter-spacing: -.075rem; }
+h3 { line-height: 1.3;  letter-spacing: -.05rem; }
+h4 { line-height: 1.35; letter-spacing: -.05rem; }
+h5 { line-height: 1.5;  letter-spacing: -.025rem; }
+h6 { line-height: 1.6;  letter-spacing: 0; }
+
+:root {
+    --theme-color: #DA1333;
+    --dark-color: #B6102B;
+    --light-color: #CFD8DC;
+    --lighter-color: #ECEFF1;
+    --text-color: #455A64;
+    --light-text-color: #78909C;
+    --lighter-text-color: #90A4AE;
+    --base-width: 1000px;
+}
+body, button, input {
+    font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--text-color);
+    outline: none;
+}
+body > nav, body > div.container, body > footer {
+    width: 100%;
+    padding-left: calc((100% - var(--base-width)) / 2);
+    padding-right: calc((100% - var(--base-width)) / 2);
+    box-sizing: border-box;
+}
+
+/* media query for not displaying for mobile */
+@media only screen and (max-width: 850px){
+    body > nav, body > div.container, body > footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* navbar */
+body > nav {
+    height: 4.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px var(--lighter-color), 0 0 0 transparent;
+    position: relative;
+}
+
+/* navbar logo */
+body > nav > a.logo {
+    float: left;
+    height: 3rem;
+    text-decoration: none;
+    color: var(--theme-color);
+    fill: var(--theme-color);
+    cursor: pointer;
+}
+body > nav > a.logo > * {
+    display: block;
+    float: left
+}
+body > nav > a.logo > svg {
+    height: 2.25rem;
+    width: 2.25rem;
+    margin: calc((2.5rem - 2.25rem) / 2) 0;
+}
+body > nav > a.logo > h3 {
+    float: left;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    margin-left: 0.75rem;
+}
+
+/* for mobile view, don't display logo text */
+@media only screen and (max-width: 750px) {
+    body > nav > a.logo > h3 {
+        display: none;
+    }
+}
+
+/* navbar buttons and input */
+body > nav > ul {
+    float: right;
+    font-size: 0;
+}
+body > nav > ul > * {
+    display: inline-block;
+    margin-left: 0.875rem;
+}
+
+body > nav > ul > button, body > nav > ul > input {
+    height: 2.5rem;
+    line-height: calc(2.5rem - 1px);
+    font-size: 0.9rem;
+    padding: 0 0.75rem;
+    background-color: transparent;
+    border: 1px solid var(--light-color);
+    transition: color 0.4s ease-in-out, border-color 0.4s ease-in-out, width 0.4s ease-in-out;
+    border-radius: 3px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+body > nav > ul > button {
+    border-color: var(--theme-color);
+    background-color: var(--theme-color);
+    color: #fff;
+    transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    font-weight: bold;
+    cursor: pointer;
+}
+body > nav > ul > button:hover {
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+body > nav > ul > input.search {
+    width: 12.5rem;
+}
+body > nav > ul > input::placeholder {
+    color: var(--lighter-text-color);
+}
+body > nav > ul > input:focus::placeholder {
+    color: var(--light-text-color);
+}
+body > nav > ul > input:focus {
+    border-color: var(--theme-color);
+}
+body > nav > ul > input.search:focus {
+    width: 20rem;
+}
+body > nav > ul > input.search:focus:not(:placeholder-shown) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* decrease size of search bar for smaller screens */
+@media only screen and (max-width: 850px) {
+    body > nav > ul > input.search {
+        width: 10rem;
+    }
+    body > nav > ul > input.search:focus {
+        width: 15rem;
+    }
+}
+
+/* for mobile, turn search bar into button that when clicked, transforms to input */
+@media only screen and (max-width: 550px) {
+    body > nav > ul > input.search
+}
+
+/* footer */
+body > footer > p {
+    text-align: center;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--light-color);
+}

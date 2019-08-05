@@ -2,7 +2,5 @@
 
 <a class="logo" href="index.php">
     <?php include "assets/img/logo.svg" ?>
-    <h1>
-        <?php include "assets/txt/site_title.txt" ?>
-    </h1>
+    <h3><?php include "assets/txt/site_title.txt" ?></h3>
 </a>

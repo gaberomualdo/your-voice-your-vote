@@ -6,8 +6,8 @@
 
     <!-- submit, search, and logout -->
     <ul>
-        <button class="log_out">Log Out</button>
+        <!--<button class="log_out">Log Out</button>-->
+        <input type="text" class="search" placeholder="Search Proposals..." spellcheck="false">
         <button class="submit">Submit a Proposal</button>
-        <input type="text" class="search" placeholder="Search All Proposals...">
     </ul>
 </nav>

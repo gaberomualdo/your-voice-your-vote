@@ -6,6 +6,6 @@
 
     <!-- login with Google -->
     <ul>
-        <button class="login">Login with Google</button>
+        <button class="login">Sign in with Google</button>
     </ul>
 </nav>
