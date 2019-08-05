@@ -23,6 +23,8 @@ h6 { line-height: 1.6;  letter-spacing: 0; }
     --text-color: #455A64;
     --light-text-color: #78909C;
     --lighter-text-color: #90A4AE;
+    --error-color: #DA1333;
+    --error-bg: #FCDCE1;
     --base-width: 1000px;
 }
 
@@ -42,7 +44,7 @@ body > nav, body > div.container, body > footer {
 }
 
 /* media query mobile width of main elements */
-@media only screen and (max-width: 850px){
+@media only screen and (max-width: 1050px){
     body > nav, body > div.container, body > footer {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -91,7 +93,9 @@ body > nav > a.logo > h3 {
     }
 }
 
-/* navbar buttons and input */
+/* navbar buttons, input, and error box */
+
+/* global */
 body > nav > ul {
     float: right;
     font-size: 0;
@@ -101,7 +105,7 @@ body > nav > ul > * {
     margin-left: 0.875rem;
 }
 
-body > nav > ul > button, body > nav > ul > input {
+body > nav > ul > button, body > nav > ul > input, body > nav > ul > p.error_box {
     height: 2.5rem;
     line-height: calc(2.5rem - 1px);
     font-size: 0.9rem;
@@ -114,6 +118,7 @@ body > nav > ul > button, body > nav > ul > input {
     vertical-align: top;
 }
 
+/* button */
 body > nav > ul > button {
     border-color: var(--theme-color);
     background-color: var(--theme-color);
@@ -127,6 +132,15 @@ body > nav > ul > button:hover {
     border-color: var(--dark-color);
 }
 
+/* error box */
+body > nav > ul > p.error_box {
+    border-color: var(--error-color);
+    color: var(--error-color);
+    background-color: var(--error-bg);
+    font-weight: bold;
+}
+
+/* input */
 body > nav > ul > input.search {
     width: 12.5rem;
 }
@@ -159,7 +173,7 @@ body > nav > ul > input.search:focus:not(:placeholder-shown) {
 
 /* for mobile, turn search bar into button that when clicked, transforms to input */
 @media only screen and (max-width: 550px) {
-    body > nav > ul > button {
+    body > nav > ul > input ~ button {
         margin-right: calc(2.5rem + 0.875rem);
     }
     
