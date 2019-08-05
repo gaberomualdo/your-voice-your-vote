@@ -8,6 +8,6 @@
     <ul>
         <!--<button class="log_out">Log Out</button>-->
         <input type="text" class="search" placeholder="Search Proposals..." spellcheck="false">
-        <button class="submit">Submit a Proposal</button>
+        <button class="submit" onclick="window.open('submit.php', '_self');">Submit a Proposal</button>
     </ul>
 </nav>

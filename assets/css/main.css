@@ -102,7 +102,7 @@ body > nav > ul > button, body > nav > ul > input {
     padding: 0 0.75rem;
     background-color: transparent;
     border: 1px solid var(--light-color);
-    transition: color 0.4s ease-in-out, border-color 0.4s ease-in-out, width 0.4s ease-in-out;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, width 0.3s ease-in-out;
     border-radius: 3px;
     box-sizing: border-box;
     vertical-align: top;
