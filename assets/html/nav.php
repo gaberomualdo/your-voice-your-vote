@@ -5,7 +5,7 @@
     <div class="logo">
         <?php include "assets/img/logo.svg" ?>
         <h1>
-            <?php include "assets/vars/site_title.txt" ?>
+            <?php include "assets/txt/site_title.txt" ?>
         </h1>
     </div>
 
