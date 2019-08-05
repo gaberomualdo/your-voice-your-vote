@@ -153,7 +153,35 @@ body > nav > ul > input.search:focus:not(:placeholder-shown) {
 
 /* for mobile, turn search bar into button that when clicked, transforms to input */
 @media only screen and (max-width: 550px) {
-    body > nav > ul > input.search
+    body > nav > ul > button {
+        margin-right: calc(2.5rem + 0.875rem);
+    }
+    
+    body > nav > ul > input.search {
+        background-image: url(../img/search_icon.png);
+        background-size: 0.9rem;
+        background-position: calc(0.8rem - 1px) center;
+        background-repeat: no-repeat;
+        padding-left: 2.2rem;
+        padding-right: calc(0.3rem - 2px);
+        transition: padding 0.4s ease-in-out, border-color 0.4s ease-in-out, width 0.4s ease-in-out;
+        background-color: #fff;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        float: right;
+    }
+    body > nav > ul > input.search:not(:focus) {
+        cursor: pointer;
+        width: 2.5rem;
+    }
+    body > nav > ul > input.search::placeholder {
+        color: transparent;
+    }
+    body > nav > ul > input.search:focus {
+        width: calc(100% - 2rem);
+        padding-right: 0.75rem;
+    }
 }
 
 /* footer */
