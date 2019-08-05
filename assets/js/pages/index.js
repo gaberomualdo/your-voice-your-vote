@@ -29,7 +29,7 @@ document.querySelector("body > nav > ul > button").addEventListener("click", () 
                     document.querySelector("body > nav > ul > p.error_box").innerText = "Sign in popup already created.";
                     break;
                 default:
-                    document.querySelector("body > nav > ul > p.error_box").innerText = "An error occured: \"" + error.message + "\".";
+                    document.querySelector("body > nav > ul > p.error_box").innerText = "An error occured: \"" + error.code + "\".";
             }
 
             // display error box
