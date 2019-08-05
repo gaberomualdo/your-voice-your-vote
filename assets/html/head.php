@@ -7,7 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- page title, which utilizes variable from filename -->
-    <title></title>
+    <title><?php
+    
+    // for homepages (public homepage and logged-in homepage),
+    // title is simply "Democracy for ASL" (the site title);
+    // for other pages, include the page title as well.
+    if($pagefile != "index" && $pagefile != "home") {
+        echo $pagetitle . " | ";
+    }
+    include "assets/txt/site_title.txt";
+    
+    ?></title>
 
     <!-- favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
@@ -33,5 +43,5 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/[ FILENAME HERE!! ].css">
+    <link rel="stylesheet" href="assets/css/pages/<?php echo $pagefile ?>.css">
 </head>
