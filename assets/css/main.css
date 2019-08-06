@@ -205,8 +205,48 @@ body > nav > ul > input.search:focus:not(:placeholder-shown) {
 }
 
 /* footer */
-body > footer > p {
-    text-align: center;
-    padding: 1.25rem 0;
+body > footer {
+    padding-bottom: 1.25rem;
+    margin-top: 10rem;
+}
+
+/* footer separator */
+body > footer > hr {
+    padding-top: 1.25rem;
+    border: none;
     border-top: 1px solid var(--light-color);
+    width: 100%;
+}
+
+/* credits on the left */
+body > footer > p.credits {
+    float: left;
+    font-size: 0.95rem;
+}
+
+/* links on the right */
+body > footer > ul.links {
+    float: right;
+    font-size: 0;
+}
+body > footer > ul.links > a {
+    display: inline-block;
+    margin-left: 1rem;
+    color: var(--theme-color);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+body > footer > ul.links > a:hover {
+    color: var(--dark-color);
+    text-decoration: underline;
+    opacity: 1;
+}
+
+/* for footer with no links, center credits */
+body > footer > p.credits {
+    width: 100%;
+    float: none;
+    text-align: center;
 }

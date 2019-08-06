@@ -1,3 +1,22 @@
+// this is the main JavaScript file, which includes global JavaScript functions for every page.
+
+// this useless function (commented out) changes the theme color randomly every second
+/*let theme_color = [218, 19, 51];
+setInterval(function(){
+    theme_color = [Math.floor(Math.random() * 256),Math.floor(Math.random() * 256),Math.floor(Math.random() * 256)];
+    let dark_color = [theme_color[0] - 25, theme_color[1] - 25, theme_color[2] - 25];
+    dark_color.forEach((item, index) => {
+        if(item < 0){
+            dark_color[index] = 0
+        }
+        if(item > 255){
+            dark_color[index] = 255
+        }
+    });
+
+    document.body.setAttribute("style", "--theme-color: rgb(" + theme_color.join(",") + "); --dark-color: rgb(" + dark_color.join(",") + ");");
+}, 1000);*/
+
 // configure and initialize firebase
 firebase.initializeApp({
     apiKey: "AIzaSyCNOgpFbSJHlmsnB-uVQrVcPn4dX_gmImU",

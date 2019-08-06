@@ -1,3 +1,5 @@
+// this is the JavaScript file only used in the index.php file
+
 // function for displaying authentication/sign-in error
 function displayAuthenticationError(errorMessage){
     document.querySelector("body > nav > ul > p.error_box").innerText = errorMessage;
