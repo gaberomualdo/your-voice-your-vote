@@ -2,8 +2,13 @@
 
 // function for displaying authentication/sign-in error
 const displayAuthenticationError = (errorMessage) => {
-    document.querySelector("body > nav > ul > p.error_box").innerText = errorMessage;
-    document.querySelector("body > nav > ul > p.error_box").style.display = "inline-block";
+    // for mobile devices, simply alert; otherwise, display error box
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+        alert(errorMessage);
+    } else{
+        document.querySelector("body > nav > ul > p.error_box").innerText = errorMessage;
+        document.querySelector("body > nav > ul > p.error_box").style.display = "inline-block";
+    }
 }
 
 // when page is loaded after authenticating w/Google, check for errors
