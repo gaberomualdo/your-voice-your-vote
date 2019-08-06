@@ -207,7 +207,6 @@ body > nav > ul > input.search:focus:not(:placeholder-shown) {
 /* footer */
 body > footer {
     padding-bottom: 1.25rem;
-    margin-top: 10rem;
 }
 
 /* footer separator */
@@ -245,7 +244,7 @@ body > footer > ul.links > a:hover {
 }
 
 /* for footer with no links, center credits */
-body > footer > p.credits {
+body > footer.no_links > p.credits {
     width: 100%;
     float: none;
     text-align: center;

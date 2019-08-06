@@ -1,7 +1,7 @@
 // this is the JavaScript file only used in the index.php file
 
 // function for displaying authentication/sign-in error
-function displayAuthenticationError(errorMessage){
+const displayAuthenticationError = (errorMessage) => {
     document.querySelector("body > nav > ul > p.error_box").innerText = errorMessage;
     document.querySelector("body > nav > ul > p.error_box").style.display = "inline-block";
 }
@@ -24,8 +24,11 @@ document.querySelector("body > nav > ul > button").addEventListener("click", () 
         return;
 	}
     
+    // firebase authentication object
+    const authObj = firebase.auth();
+
     // create Google auth provider object
-    var provider = new firebase.auth.GoogleAuthProvider();
+    const provider = new firebase.auth.GoogleAuthProvider();
 
     // show domain "@asl.org" at end of email field
     provider.setCustomParameters({
@@ -33,12 +36,12 @@ document.querySelector("body > nav > ul > button").addEventListener("click", () 
     });
 
     // if using mobile device, sign in with redirect; else, use popup
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         // sign in with redirect Google sign in site
-        firebase.auth().signInWithRedirect(provider);
+        authObj.signInWithRedirect(provider);
     }else{
         // sign in with Google sign in popup and handle errors
-        firebase.auth().signInWithPopup(provider).catch(function(error) {
+        authObj.signInWithPopup(provider).catch(function(error) {
             // Handle errors and display error message
 
             // display error message accordingly

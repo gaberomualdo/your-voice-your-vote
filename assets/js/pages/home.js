@@ -1,0 +1,1 @@
+// this is the JavaScript file only used in the home.php file
