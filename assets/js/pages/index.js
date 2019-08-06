@@ -6,6 +6,39 @@ const displayAuthenticationError = (errorMessage) => {
     document.querySelector("body > nav > ul > p.error_box").style.display = "inline-block";
 }
 
+// when page is loaded after authenticating w/Google, check for errors
+firebase.auth().getRedirectResult().catch((error) => {
+    // Handle errors and display error message
+
+    // display error message accordingly
+    switch(error.code){
+        case "auth/auth-domain-config-required":
+            displayAuthenticationError("Server error.");
+            break;
+        case "auth/web-storage-unsupported":
+        case "auth/operation-not-supported-in-this-environment":
+            displayAuthenticationError("Browser/environment not supported.");
+            break;
+        case "auth/timeout":
+            displayAuthenticationError("Server error.");
+            break;
+        case "auth/network-request-failed":
+            displayAuthenticationError("Network connection error.");
+            break;
+        case "auth/too-many-requests":
+            displayAuthenticationError("We detected unusual activity from this account.");
+            break;
+        case "auth/user-disabled":
+            displayAuthenticationError("Account has been disabled by admin.");
+            break;
+        case "auth/user-token-expired":
+            displayAuthenticationError("Sign in expired. Try again.");
+            break;
+        default:
+            displayAuthenticationError("An error occured: \"" + error.code + "\".");
+    }
+})
+
 // login with Google when button is clicked
 document.querySelector("body > nav > ul > button").addEventListener("click", () => {
     // before anything happens, run basic error checks;
@@ -35,29 +68,7 @@ document.querySelector("body > nav > ul > button").addEventListener("click", () 
         "hd": "asl.org",
     });
 
-    // if using mobile device, sign in with redirect; else, use popup
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        // sign in with redirect Google sign in site
-        authObj.signInWithRedirect(provider);
-    }else{
-        // sign in with Google sign in popup and handle errors
-        authObj.signInWithPopup(provider).catch(function(error) {
-            // Handle errors and display error message
-
-            // display error message accordingly
-            switch(error.code){
-                case "auth/popup-blocked":
-                    displayAuthenticationError("Sign in popup window was blocked.");
-                    break;
-                case "auth/popup-closed-by-user":
-                    displayAuthenticationError("Sign in within popup was never completed.");
-                    break;
-                case "auth/cancelled-popup-request":
-                    displayAuthenticationError("Sign in popup already created.");
-                    break;
-                default:
-                    displayAuthenticationError("An error occured: \"" + error.code + "\".");
-            }
-        });
-    }
+    // sign in with redirect (we previously used sign-in with popup, but
+    // that failed in browsers which disabled cross-site tracking).
+    authObj.signInWithRedirect(provider);
 });
