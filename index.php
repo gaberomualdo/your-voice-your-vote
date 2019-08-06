@@ -11,6 +11,8 @@
 
         <!-- site content and container DIV -->
         <div class="container">
+            <!-- landing page with catchy header -->
+            <h1>Make your ideas a reality<br>On Democracy for ASL</h1>
             
         </div>
 

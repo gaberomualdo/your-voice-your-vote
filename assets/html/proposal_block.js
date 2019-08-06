@@ -2,7 +2,7 @@
 // which is shown in the logged-in homepage for a "feed"
 // of proposals.
 
-function generateProposalBlock(){
+function generateProposalBlock(title, description, votes_for, votes_against, proposer, ends_in_days){
     // limit description length to 50 words, and add "..." if needed
     if(description.split(" ").length > 50){
         description = description.split(" ").slice(0, 50).join(" ") + "...";
