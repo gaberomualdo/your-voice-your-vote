@@ -42,6 +42,7 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 
     <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/pages/<?php echo $pagefile ?>.css">
 </head>

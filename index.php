@@ -27,12 +27,11 @@
                     })();
                     ?>
                 </h1>
-                <p class=""><?php include "assets/txt/site_title.txt"; ?> is a platform for students to voice their concerns and suggest solutions to the issues faced by the student body. This platform allows students to make their voices heard, to pitch in on innovative ideas, and bring about lasting change to ASL.</p>
+                <p class="animated" style="opacity: 0;"><?php include "assets/txt/site_title.txt"; ?> is a platform for students to voice their concerns and suggest solutions to the issues faced by the student body. This platform allows students to make their voices heard, to pitch in on innovative ideas, and bring about lasting change to ASL.</p>
                 <!-- note that this login button simply triggers the other login button -->
-                <button class="login_alias">Sign in with Google</button>
+                <button class="login_alias animated" style="opacity: 0;">Sign in with Google</button>
             </div>
             <div class="col">
-                <img src="assets/img/site_phone_view.png" alt="">
             </div>
         </div>
 
