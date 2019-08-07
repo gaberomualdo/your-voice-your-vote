@@ -60,6 +60,10 @@ body > div.container > div.col:nth-child(2) {
     box-sizing: border-box;
     padding-left: 2.5rem;
 }
+body > div.container > div.col:nth-child(2) > img {
+    width: 100%;
+    height: auto;
+}
 
 /* mobile view (don't display second column) */
 @media only screen and (max-width: 850px) {
