@@ -21,6 +21,7 @@ h6 { line-height: 1.6;  letter-spacing: 0; }
     --light-color: #CFD8DC;
     --lighter-color: #ECEFF1;
     --text-color: #455A64;
+    --dark-text-color: #37474F;
     --light-text-color: #78909C;
     --lighter-text-color: #90A4AE;
     --error-color: #DA1333;
@@ -207,6 +208,7 @@ body > nav > ul > input.search:focus:not(:placeholder-shown) {
 /* footer */
 body > footer {
     padding-bottom: 1.25rem;
+    height: 4rem;
 }
 
 /* footer separator */
@@ -220,7 +222,12 @@ body > footer > hr {
 /* credits on the left */
 body > footer > p.credits {
     float: left;
+}
+
+/* style text elements */
+body > footer > p.credits, body > footer > p.credits {
     font-size: 0.95rem;
+    line-height: calc(1.5rem - 1px);
 }
 
 /* links on the right */
@@ -235,7 +242,6 @@ body > footer > ul.links > a {
     text-decoration: none;
     cursor: pointer;
     opacity: 0.9;
-    font-size: 0.95rem;
 }
 body > footer > ul.links > a:hover {
     color: var(--dark-color);

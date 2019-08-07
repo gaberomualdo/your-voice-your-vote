@@ -1,5 +1,10 @@
 // this is the JavaScript file only used in the index.php file
 
+// trigger first login button from login button in container
+document.querySelector("body > div.container > div.col:first-child > button.login_alias").addEventListener("click", () => {
+    document.querySelector("body > nav > ul > button.login").click();    
+});
+
 // function for displaying authentication/sign-in error
 const displayAuthenticationError = (errorMessage) => {
     // for mobile devices, simply alert; otherwise, display error box
@@ -45,7 +50,7 @@ firebase.auth().getRedirectResult().catch((error) => {
 })
 
 // login with Google when button is clicked
-document.querySelector("body > nav > ul > button").addEventListener("click", () => {
+document.querySelector("body > nav > ul > button.login").addEventListener("click", () => {
     // before anything happens, run basic error checks;
     // all errors found will be displayed in error box,
     // and the login will be aborted.
