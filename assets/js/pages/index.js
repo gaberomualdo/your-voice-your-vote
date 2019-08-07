@@ -5,6 +5,11 @@ document.querySelector("body > div.container > div.col:first-child > button.logi
     document.querySelector("body > nav > ul > button.login").click();    
 });
 
+// display animations when page is loaded
+window.addEventListener("load", () => {
+    document.querySelector("body > div.container > div.col:first-child > h1.catchy_header").classList.add("animation_shown");
+});
+
 // function for displaying authentication/sign-in error
 const displayAuthenticationError = (errorMessage) => {
     // for mobile devices, simply alert; otherwise, display error box
