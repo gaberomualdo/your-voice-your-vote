@@ -31,7 +31,27 @@
                 <!-- note that this login button simply triggers the other login button -->
                 <button class="login_alias animated" style="opacity: 0;">Sign in with Google</button>
             </div>
+            <!-- this side includes an animated design with a circle of people, all connected by a singular idea. -->
             <div class="col">
+                <div class="design">
+                    <!-- display and write HTML elements for 8 people icons dynamically with PHP -->
+                    <?php
+                    (function(){
+                        $number_of_icons = 8;
+                        $internal_angle = 360 / $number_of_icons;
+
+                        // get icons for both male and female icons and put in array
+                        $gender_icons = array_map(function($gender) { return file_get_contents("assets/img/" . $gender . "_person_icon.svg"); }, ["male", "female"]);
+
+                        for ($i = 0; $i < $number_of_icons; $i++) {
+                            // get icon with random gender
+                            $icon = $gender_icons[rand(0,1)];
+
+                            echo "<div class='icon' style='--angle: ", $internal_angle * $i, ";'>", $icon, "</div>";
+                        }
+                    })();
+                    ?>
+                </div>
             </div>
         </div>
 
