@@ -37,7 +37,7 @@
                     <!-- display and write HTML elements for 8 people icons dynamically with PHP -->
                     <?php
                     (function(){
-                        $number_of_icons = 8;
+                        $number_of_icons = 12;
                         $internal_angle = 360 / $number_of_icons;
 
                         // get icons for both male and female icons and put in array
@@ -47,7 +47,8 @@
                             // get icon with random gender
                             $icon = $gender_icons[rand(0,1)];
 
-                            echo "<div class='icon' style='--angle: ", $internal_angle * $i, ";'>", $icon, "</div>";
+                            // display icon, with CSS variables for the angle, parametric x value variable --> cos(angle), and parametric y value variable --> sin(angle)
+                            echo "<div class='icon' style='--angle: ", $internal_angle * $i, "; --parametric-val-x: ", cos(deg2rad($internal_angle * $i)), "; --parametric-val-y: ", sin(deg2rad($internal_angle * $i)), ";'>", $icon, "</div>";
                         }
                     })();
                     ?>

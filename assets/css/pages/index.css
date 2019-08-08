@@ -8,12 +8,11 @@ body > div.container {
 body > div.container > div.col {
     display: block;
     float: left;
-    width: 50%;
 }
 
 /* style left column and children */
 body > div.container > div.col:first-child {
-    width: 45%;
+    width: calc(100% - 35rem);
 }
 
 
@@ -84,15 +83,33 @@ body > div.container > div.col:first-child > button.login_alias:hover {
     border-color: var(--dark-color);
 }
 
-/* style right column and image (child) */
+/* style right column and design */
 body > div.container > div.col:nth-child(2) {
     box-sizing: border-box;
-    padding-left: 5rem;
-    width: 55%;
+    padding-left: 10rem;
+    width: 35rem;
 }
-body > div.container > div.col:nth-child(2) > img {
+
+/* design */
+body > div.container > div.col:nth-child(2) > div.design {
+    width: 25rem;
+    height: 25rem;
+    position: relative;
+}
+
+/* style each icon and SVGs */
+body > div.container > div.col:nth-child(2) > div.design > div.icon {
+    position: absolute;
+    left: calc( (23rem / 2) + calc(23rem / 2) * var(--parametric-val-x) );
+    top: calc( (23rem / 2) + calc(23rem / 2) * var(--parametric-val-y) );
+    width: 2rem;
+    height: 2rem;
+    transform: scale(0);
+    transition: transform 0.8s;
+}
+body > div.container > div.col:nth-child(2) > div.design > div.icon > svg {
+    height: 100%;
     width: 100%;
-    height: auto;
 }
 
 /* mobile view (don't display second column) */
