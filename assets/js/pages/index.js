@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
     document.querySelector("body > div.container > div.col:first-child > h1.catchy_header").classList.add("animation_shown");
     
     // button and text animations go after header animation is done (can be checked with last word transition time)
-    const transitionTimeSeconds = parseInt(document.querySelector("body > div.container > div.col:first-child > h1.catchy_header > span.word_container:last-child > span.word_animated").style.transitionDelay.split("s")[0]) + 0.8;
+    const transitionTimeSeconds = parseInt(document.querySelector("body > div.container > div.col:first-child > h1.catchy_header > span.word_container:last-child > span.word_animated").style.transitionDelay.split("s")[0]) + 0.6;
 
     setTimeout(() => {
         // animate text
