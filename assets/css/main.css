@@ -17,6 +17,7 @@ h6 { line-height: 1.6;  letter-spacing: 0; }
 /* CSS variables */
 :root {
     --theme-color: #DA1333;
+    --light-theme-color: #ef9a9a;
     --dark-color: #B6102B;
     --light-color: #CFD8DC;
     --lighter-color: #ECEFF1;
@@ -118,7 +119,7 @@ body > nav > ul > button, body > nav > ul > input, body > nav > ul > p.error_box
     padding: 0 0.75rem;
     background-color: transparent;
     border: 1px solid var(--light-color);
-    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, width 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, width 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border-radius: 3px;
     box-sizing: border-box;
     vertical-align: top;
@@ -147,6 +148,9 @@ body > nav > ul > p.error_box {
 }
 
 /* input */
+body > nav > ul > input {
+    box-shadow: 0 0 1px var(--light-color) inset;
+}
 body > nav > ul > input.search {
     width: 12.5rem;
 }
@@ -158,6 +162,7 @@ body > nav > ul > input:focus::placeholder {
 }
 body > nav > ul > input:focus {
     border-color: var(--theme-color);
+    box-shadow: 0 0 1px var(--light-theme-color) inset;
 }
 body > nav > ul > input.search:focus {
     width: 20rem;
