@@ -3,7 +3,12 @@
 <!-- import firebase for authentication and database -->
 <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+<!-- only import firebase database for logged-in pages (to save load times for public homepage) -->
+<?php
+if($pagefile != "index"){
+    echo '<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>';
+}
+?>
 
 <!-- main script -->
 <script src="assets/js/script.js"></script>
