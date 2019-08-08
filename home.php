@@ -19,5 +19,8 @@
 
         <!-- include scripts -->
         <?php include "assets/html/scripts.php" ?>
+
+        <!-- import script to generate HTML for proposal block -->
+        <script src="assets/html/proposal_block.js"></script>
     </body>
 </html>
