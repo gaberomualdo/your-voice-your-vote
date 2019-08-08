@@ -11,6 +11,12 @@ body > div.container > div.col {
     width: 50%;
 }
 
+/* style left column and children */
+body > div.container > div.col:first-child {
+    width: 45%;
+}
+
+
 /* style catchy header with EPIC animation on each word */
 body > div.container > div.col:first-child > h1.catchy_header {
     font-size: 0;
@@ -82,6 +88,7 @@ body > div.container > div.col:first-child > button.login_alias:hover {
 body > div.container > div.col:nth-child(2) {
     box-sizing: border-box;
     padding-left: 5rem;
+    width: 55%;
 }
 body > div.container > div.col:nth-child(2) > img {
     width: 100%;

@@ -242,6 +242,7 @@ body > footer > ul.links > a {
     text-decoration: none;
     cursor: pointer;
     opacity: 0.9;
+    font-size: 0.95rem;
 }
 body > footer > ul.links > a:hover {
     color: var(--dark-color);
