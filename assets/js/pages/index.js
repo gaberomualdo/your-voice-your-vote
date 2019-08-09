@@ -10,8 +10,8 @@ window.addEventListener("load", () => {
     // header animation
     document.querySelector("body > div.container > div.col:first-child > h1.catchy_header").classList.add("animation_shown");
     
-    // button and text animations go after header animation is done (can be checked with last word transition time)
-    const transitionTimeSeconds = parseInt(document.querySelector("body > div.container > div.col:first-child > h1.catchy_header > span.word_container:last-child > span.word_animated").style.transitionDelay.split("s")[0]) + 0.6;
+    // button, and text animations in go after header animation is done (can be checked with last word transition time)
+    const headerTransitionTimeMilliseconds = parseInt(document.querySelector("body > div.container > div.col:first-child > h1.catchy_header > span.word_container:last-child > span.word_animated").style.transitionDelay.split("s")[0]) + 0.6;
 
     setTimeout(() => {
         // animate text
@@ -21,7 +21,22 @@ window.addEventListener("load", () => {
         // animate button
         document.querySelector("body > div.container > div.col:first-child > button.login_alias").style.opacity = "1";
         document.querySelector("body > div.container > div.col:first-child > button.login_alias").classList.add("fadeInUp");
-    }, transitionTimeSeconds * 1000);
+    }, headerTransitionTimeMilliseconds * 1000);
+
+    // animate design in 0.5 seconds after left side has been fully animated in
+    setTimeout(() => {
+        // animate design
+        document.querySelector("body > div.container > div.col:nth-child(2) > div.design").style.opacity = "1";
+        document.querySelector("body > div.container > div.col:nth-child(2) > div.design").classList.add("fadeIn");
+    }, (headerTransitionTimeMilliseconds + 0.75) * 1000);
+
+    // animate design after it has animated in
+    setTimeout(() => {
+        document.querySelector("body > div.container > div.col:nth-child(2) > div.design").classList.add("animation_shown");
+
+        // animate idea in design
+        document.querySelector("body > div.container > div.col:nth-child(2) > div.design > div.idea_icon").classList.add("animation_shown");
+    }, (headerTransitionTimeMilliseconds + 1.25) * 1000);
 });
 
 // function for displaying authentication/sign-in error

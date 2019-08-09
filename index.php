@@ -33,11 +33,11 @@
             </div>
             <!-- this side includes an animated design with a circle of people, all connected by a singular idea. -->
             <div class="col">
-                <div class="design">
+                <div class="design animated" style="opacity: 0;">
                     <!-- display and write HTML elements for 8 people icons dynamically with PHP -->
                     <?php
                     (function(){
-                        $number_of_icons = 12;
+                        $number_of_icons = 8;
                         $internal_angle = 360 / $number_of_icons;
 
                         // get icons for both male and female icons and put in array
@@ -45,11 +45,16 @@
 
                         for ($i = 0; $i < $number_of_icons; $i++) {
                             // get icon with random gender
-                            $icon = $gender_icons[rand(0,1)];
+                            $icon = $gender_icons[$i % 2];
 
-                            // display icon, with CSS variables for the angle, parametric x value variable --> cos(angle), and parametric y value variable --> sin(angle)
-                            echo "<div class='icon' style='--angle: ", $internal_angle * $i, "; --parametric-val-x: ", cos(deg2rad($internal_angle * $i)), "; --parametric-val-y: ", sin(deg2rad($internal_angle * $i)), ";'>", $icon, "</div>";
+                            // display icon, with transition delay, CSS variables for the angle, parametric x value variable --> cos(angle), and parametric y value variable --> sin(angle)
+                            echo "<div class='person_icon' style='--transition-delay:", 0.2 + (0.2 * $i), "s; --angle: ", $internal_angle * $i, "deg; --parametric-val-x: ", cos(deg2rad($internal_angle * $i)), "; --parametric-val-y: ", sin(deg2rad($internal_angle * $i)), ";'>", $icon, "</div>";
                         }
+
+                        // display lightbulb icon in center, symbolizing people connected by a singular idea
+                        echo '<div class="idea_icon" style="transition-delay: ', 0.5 + (0.2 * ($i - 1)), 's">';
+                        include "assets/img/idea_icon.svg";
+                        echo "</div>";
                     })();
                     ?>
                 </div>

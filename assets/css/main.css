@@ -17,12 +17,13 @@ h6 { line-height: 1.6;  letter-spacing: 0; }
 /* CSS variables */
 :root {
     --theme-color: #DA1333;
-    --light-theme-color: #ef9a9a;
+    --light-theme-color: #EF9A9A;
     --dark-color: #B6102B;
     --light-color: #CFD8DC;
     --lighter-color: #ECEFF1;
     --text-color: #455A64;
     --dark-text-color: #37474F;
+    --darker-text-color: #1E282C;
     --light-text-color: #78909C;
     --lighter-text-color: #90A4AE;
     --error-color: #DA1333;
