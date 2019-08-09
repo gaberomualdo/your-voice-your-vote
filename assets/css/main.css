@@ -219,7 +219,7 @@ body > nav > ul > input.search:focus:not(:placeholder-shown) {
 /* footer */
 body > footer {
     padding-bottom: 1.25rem;
-    height: 4rem;
+    min-height: 4rem;
 }
 
 /* footer separator */
@@ -266,4 +266,19 @@ body > footer.no_links > p.credits {
     width: 100%;
     float: none;
     text-align: center;
+}
+
+/* mobile view for footer */
+@media only screen and (max-width: 550px) {
+    /* each child in footer will display on its own line and center all children */
+    body > footer > *:not(hr) {
+        display: block !important;
+        float: none !important;
+        text-align: center !important;
+    }
+
+    /* margin between children of footer */
+    body > footer > *:not(:last-child):not(hr) {
+        margin-bottom: 1rem;
+    }
 }

@@ -10,7 +10,7 @@
         <?php include "assets/html/nav_auth.php" ?>
 
         <!-- site content and container DIV -->
-        <div class="container">
+        <div class="container openProposalsTabShown">
             <!-- two tabs — open proposals, and completed proposals -->
             
             <!-- tab buttons -->
