@@ -11,7 +11,23 @@
 
         <!-- site content and container DIV -->
         <div class="container">
+            <!-- two tabs — open proposals, and completed proposals -->
+            
+            <!-- tab buttons -->
+            <ul class="tabButtons">
+                <li class="openProposalsButton">Open Proposals</li>
+                <li class="completedProposalsButton">Completed Proposals</li>
+            </ul>
 
+            <!-- tabs -->
+            <div class="tabs">
+                <div class="openProposalsTab">
+                    
+                </div>
+                <div class="completedProposalsTab">
+                    
+                </div>
+            </div>
         </div>
 
         <!-- include footer -->

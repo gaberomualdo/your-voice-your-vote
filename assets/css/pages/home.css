@@ -1,0 +1,39 @@
+/* style container with margins */
+body > div.container {
+    margin: 5rem 0;
+}
+
+/* style tab buttons and parent container */
+body > div.container > ul.tabButtons {
+    display: block;
+    list-style: none;
+    overflow: hidden;
+}
+body > div.container > ul.tabButtons > li {
+    display: block;
+    float: left;
+    min-height: calc(3.75rem + 4px);
+    box-sizing: border-box;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    color: var(--dark-text-color);
+    font-weight: bold;
+    padding: 0.75rem 0.75rem;
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+}
+/* margin */
+body > div.container > ul.tabButtons > li:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+/* mobile view */
+@media only screen and (max-width: 650px) {
+    body > div.container > ul.tabButtons > li {
+        width: 50%;
+        text-align: center;
+        font-size: 1.25rem;
+        padding: 0.5rem 0.5rem;
+        margin-right: 0 !important;
+    }
+}
