@@ -15,8 +15,23 @@ if($pagefile != "index"){
 
 <!-- if logged-in, show logged-in script -->
 <?php
-if($pagefile != "index"){
+if($pagefile != "index") {
     echo '<script src="assets/js/logged_in.js"></script>';
+}
+?>
+
+<!-- if page is home.php, put necessary icons into JS variables -->
+<?php
+if($pagefile == "home") {
+    // up arrow
+    echo "<script>const getUpArrowSVG = () => { return '";
+    include "assets/img/up_arrow.svg";
+    echo "' }; </script>";
+
+    // down arrow
+    echo "<script>const getDownArrowSVG = () => { return '";
+    include "assets/img/down_arrow.svg";
+    echo "' }; </script>";
 }
 ?>
 

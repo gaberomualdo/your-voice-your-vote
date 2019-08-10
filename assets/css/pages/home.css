@@ -50,6 +50,11 @@ body > div.container > ul.tabButtons > li:not(:last-child) {
 
 /* display corresponding tabs when tab buttons are active (and show activeness on tab buttons via color and border color) */
 
+/* don't show tabs normally */
+body > div.container > div.tabs > div.openProposalsTab, body > div.container > div.tabs > div.completedProposalsTab {
+    display: none;
+}
+
 /* show tabs */
 body > div.container.openProposalsTabShown > div.tabs > div.openProposalsTab, body > div.container.completedProposalsTabShown > div.tabs > div.completedProposalsTab {
     display: block !important;
