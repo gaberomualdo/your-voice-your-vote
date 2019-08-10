@@ -32,6 +32,11 @@ if($pagefile == "home") {
     echo "<script>const getDownArrowSVG = () => { return '";
     include "assets/img/down_arrow.svg";
     echo "' }; </script>";
+
+    // clock
+    echo "<script>const getClockSVG = () => { return '";
+    include "assets/img/clock.svg";
+    echo "' }; </script>";
 }
 ?>
 

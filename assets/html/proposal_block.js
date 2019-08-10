@@ -27,12 +27,12 @@ generateProposalBlockHTML = (proposal_id, title, description, votes_for, votes_a
 
     // get string for vote_ends_in text block
     let vote_ends_in_string;
-    if(ends_in_days > 0){
+    if(ends_in_days == 0){
         vote_ends_in_string = `Vote ends <strong>today</strong>`;
-    }else if(ends_in_days == 0){
-        vote_ends_in_string = `Vote ends in <strong>${ends_in_days} days</strong>`;
+    }else if(ends_in_days > 0){
+        vote_ends_in_string = `Vote ends in <strong>${ends_in_days} ${ends_in_days == 1 ? "day" : "days"}</strong>`;
     }else{
-        vote_ends_in_string = `Vote ended <strong>${ends_in_days * -1} days ago</strong>`;
+        vote_ends_in_string = `Vote ended <strong>${ends_in_days * -1} ${ends_in_days == -1 ? "day" : "days"} ago</strong>`;
     }
 
     // return formatted HTML of proposal block
@@ -50,7 +50,10 @@ generateProposalBlockHTML = (proposal_id, title, description, votes_for, votes_a
                     <img class="profile_picture" src="${proposer.profile_picture}">
                     <p>${proposer.full_name}</p>
                 </div>
-                <p class="vote_ends_in">${vote_ends_in_string}</p>
+                <div class="vote_ends_in">
+                    ${getClockSVG()}
+                    <p>${vote_ends_in_string}</p>
+                </div>
             </div>
         </div>
 

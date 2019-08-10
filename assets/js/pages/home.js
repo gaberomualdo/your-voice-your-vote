@@ -38,8 +38,8 @@ const voteAgainstProposal = (proposalID) => {
         let currentDateToday;
         (() => {
             const currentDateRightNow = new Date();
-            const currentDateStringToday = currentDateRightNow.getFullYear() + "-" + currentDateRightNow.getMonth().toString().padStart(2, "0") + "-" + currentDateRightNow.getDate().toString().padStart(2, "0");
-            
+            const currentDateStringToday = currentDateRightNow.getFullYear() + "-" + (currentDateRightNow.getMonth() + 1).toString().padStart(2, "0") + "-" + currentDateRightNow.getDate().toString().padStart(2, "0");
+
             currentDateToday = new Date(currentDateStringToday);
         })();
 

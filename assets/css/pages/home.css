@@ -65,3 +65,38 @@ body > div.container.openProposalsTabShown > ul.tabButtons > li.openProposalsBut
     border-color: var(--theme-color);
     color: var(--theme-color);
 }
+
+/* style proposal block */
+body > div.container > div.tabs > div > div.proposal_block {
+    background-color: #fff;
+    box-shadow: 0 0 10px 4px var(--lighter-color), 0 0 0 transparent;
+    border-radius: 5px;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+body > div.container > div.tabs > div > div.proposal_block > div.row {
+    display: block;
+    float: left;
+    width: 100%;
+    clear: both;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row > div.col {
+    float: left;
+    box-sizing: border-box;
+}
+
+/* first row with title, description, proposer, and vote ends in */
+
+/* title and description */
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child {
+    width: 65%;
+    padding-right: 2.5rem;
+}
+
+/* proposer and vote ends in */
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) {
+    width: 35%;
+}
+
+/* style voting area */
