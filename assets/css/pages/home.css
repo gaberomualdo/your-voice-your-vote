@@ -93,24 +93,30 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:first-child
     width: calc(100% - 17.5rem);
     padding-right: 2.5rem;
 }
+
+/* title */
 body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child > h1.title {
     font-size: 2.25rem;
     line-height: 1.5;
     margin-bottom: 0.75rem;
     color: var(--dark-text-color);
 }
+
+/* description */
 body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child > p {
     font-size: 0.9rem;
     line-height: 1.5;
     color: var(--medium-text-color);
 }
+
+/* expand description button and functionality */
 body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child > p > a {
-    color: var(--link-color);
+    color: var(--theme-color);
     text-decoration: none;
     cursor: pointer;
 }
 body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child > p > a:hover {
-    color: var(--link-dark-color);
+    color: var(--dark-color);
     text-decoration: underline;
 }
 body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child:not(.show_full_description) > p.description_full_length {
@@ -177,9 +183,9 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:first-child
         width: auto !important;
         display: block !important;
         float: left !important;
-        margin-bottom: 1rem !important;
     }
     body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > *:not(:last-child) {
+        margin-bottom: 1rem !important;
         margin-right: 1.5rem !important;
     }
     body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div.vote_ends_in > p {
@@ -192,5 +198,59 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:first-child
 
 /* style voting area */
 body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) {
-    
+    margin-top: 2rem;
+    height: 4rem;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > * {
+    display: block;
+    float: left;
+}
+
+/* voting buttons */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button {
+    height: 2.5rem;
+    box-sizing: border-box;
+    padding: 0 0.8rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0;
+    text-align: center;
+    border-radius: 3px;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button.active {
+    opacity: 1;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button > * {
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+/* button text and icon */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button > p {
+    font-size: 0.9rem;
+    line-height: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button > svg {
+    height: 2.5rem;
+    width: 1.75rem;
+    box-sizing: border-box;
+    padding: 0.75rem 0.125rem;
+    fill: #fff;
+    margin-right: 0.5rem;
+}
+
+/* icon is on the right for button on the right side */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button:first-child > svg {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+/* style background colors for voting buttons */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button:first-child {
+    background-color: var(--green-color);
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button:last-child {
+    background-color: var(--red-color);
 }

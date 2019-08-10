@@ -9,19 +9,19 @@ generateProposalBlockVotingAreaHTML = (proposal_id, votes_for, votes_against, cu
     
     // return HTML
     return `
-    <button class="vote_for_button" onclick="voteForProposal('${proposal_id}');">${getUpArrowSVG()} Vote For</button>
+    <button class="vote_for_button" onclick="voteForProposal('${proposal_id}');"><p>Vote For</p>${getUpArrowSVG()}</button>
     <div class="voting_progress">
         <div class="votes_for" style="width: ${votes_for_percentage}%">${votes_for} in favor <span class='current_user_vote ${current_user_vote == "for" ? "active" : ""}'>(including you)</span></div>
         <div class="votes_against" style="width: ${100 - votes_for_percentage}%">${votes_against} against <span class='current_user_vote ${current_user_vote == "against" ? "active" : ""}'>(including you)</span></div>
     </div>
-    <button class="vote_against_button" onclick="voteAgainstProposal('${proposal_id}');">${getDownArrowSVG()} Vote Against</button>
+    <button class="vote_against_button" onclick="voteAgainstProposal('${proposal_id}');">${getDownArrowSVG()}<p>Vote Against</p></button>
     `;
 };
 
 generateProposalBlockHTML = (proposal_id, title, description, votes_for, votes_against, proposer, ends_in_days, current_user_vote) => {
     // limit description length to 50 words, and add "..." if needed
     let description_limited_length = description;
-    if(description_limited_length.split(" ").length > 75){
+    if(description_limited_length.split(" ").length > 25){
         description_limited_length = description_limited_length.split(" ").slice(0, 50).join(" ") + "...";
     }
 

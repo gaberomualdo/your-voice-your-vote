@@ -19,16 +19,23 @@ h6 { line-height: 1.6;  letter-spacing: 0; }
     --theme-color: #DA1333;
     --light-theme-color: #EF9A9A;
     --dark-color: #B6102B;
+
     --light-color: #CFD8DC;
     --lighter-color: #ECEFF1;
+
     --text-color: #455A64;
     --dark-text-color: #37474F;
     --darker-text-color: #1E282C;
     --medium-text-color: #607D8B;
     --light-text-color: #78909C;
     --lighter-text-color: #90A4AE;
+
     --error-color: #DA1333;
     --error-bg: #FCDCE1;
+    
+    --green-color: #27ae60;
+    --red-color: #DA1333;
+
     --base-width: 1100px;
 }
 
