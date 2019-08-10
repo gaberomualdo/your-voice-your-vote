@@ -37,7 +37,7 @@ generateProposalBlockHTML = (proposal_id, title, description, votes_for, votes_a
 
     // return formatted HTML of proposal block
     return `
-    <div class="proposal_block">
+    <div class="proposal_block" id="proposalBlock_${proposal_id}">
         <!-- informational area -->
         <div class="row">
             <div class="col">

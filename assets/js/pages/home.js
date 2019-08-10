@@ -14,21 +14,29 @@ document.querySelector("body > div.container > ul.tabButtons > li.completedPropo
     document.querySelector("body > div.container").classList.add("completedProposalsTabShown");
 });
 
+// variable for firebase realtime database object
+const databaseObj = firebase.database();
+
+// variable for firebase authentication object
+const authObj = firebase.auth();
+
+// click functions for vote for and vote against for each proposal
+const voteForProposal = (proposalID) => {
+    databaseObj.ref("proposals/" + proposalID + "/voters/" + authObj.currentUser.email.split("@")[0] + "/").set("for");
+}
+const voteAgainstProposal = (proposalID) => {
+    databaseObj.ref("proposals/" + proposalID + "/voters/" + authObj.currentUser.email.split("@")[0] + "/").set("against");
+}
+
 // functions and features that utilize database are put in this IIFE
 (function(){
-    // variable for firebase realtime database object
-    const databaseObj = firebase.database();
-
-    // variable for firebase authentication object
-    const authObj = firebase.auth();
-
     // loop through proposals in database and sort into open and completed, and display in corresponding tab
     databaseObj.ref("proposals/").once("value", (snapshot) => {
         const databaseProposalsContent = snapshot.val();
         
         // variable for current date today
         let currentDateToday;
-        (function(){
+        (() => {
             const currentDateRightNow = new Date();
             const currentDateStringToday = currentDateRightNow.getFullYear() + "-" + currentDateRightNow.getMonth().toString().padStart(2, "0") + "-" + currentDateRightNow.getDate().toString().padStart(2, "0");
             
@@ -75,6 +83,35 @@ document.querySelector("body > div.container > ul.tabButtons > li.completedPropo
                 // vote is open, therefore display in open tab
                 document.querySelector("body > div.container > div.tabs > div.openProposalsTab").innerHTML += proposalBlockHTML;
             }
+
+            // refresh proposal block voting area when database value has changed
+            const votingAreaToRefresh = document.getElementById("proposalBlock_" + proposalID).querySelector("div.row:nth-child(2)");
+            databaseObj.ref("proposals/" + proposalID + "/").on("value", (snapshot) => {
+                const databaseProposalContent = snapshot.val();
+
+                // the vote the current user cast
+                let currentUserVote = null;
+
+                // calculate how many votes for and against, and what vote the current user cast
+                let votesFor = 0;
+                let votesAgainst = 0;
+                for (const voter in databaseProposalContent.voters) {
+                    if(databaseProposalContent.voters[voter] == "for") {
+                        // add to votesFor variable if vote is for
+                        votesFor++;
+                    }else if(databaseProposalContent.voters[voter] == "against") {
+                        // add to votesFor variable if vote is against
+                        votesAgainst++;
+                    }
+
+                    // if vote was either for or against, and it was cast by current user, then set the currentUserVote variable
+                    if((databaseProposalContent.voters[voter] == "against" || databaseProposalContent.voters[voter] == "for") && voter == authObj.currentUser.email.split("@")[0]) {
+                        currentUserVote = databaseProposalContent.voters[voter];
+                    }
+                }
+                
+                votingAreaToRefresh.innerHTML = generateProposalBlockVotingAreaHTML(proposalID, votesFor, votesAgainst, currentUserVote);
+            })
         }
     });
 })();
