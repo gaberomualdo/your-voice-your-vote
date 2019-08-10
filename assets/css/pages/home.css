@@ -90,13 +90,107 @@ body > div.container > div.tabs > div > div.proposal_block > div.row > div.col {
 
 /* title and description */
 body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child {
-    width: 65%;
+    width: calc(100% - 17.5rem);
     padding-right: 2.5rem;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child > h1.title {
+    font-size: 2.25rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    color: var(--dark-text-color);
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child > p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--medium-text-color);
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child > p > a {
+    color: var(--link-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child > p > a:hover {
+    color: var(--link-dark-color);
+    text-decoration: underline;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child:not(.show_full_description) > p.description_full_length {
+    display: none;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child.show_full_description > p.description_limited_length {
+    display: none;
 }
 
 /* proposer and vote ends in */
 body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) {
-    width: 35%;
+    width: 17.5rem;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div {
+    width: 100%;
+    min-height: 2rem;
+    overflow: auto;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div > * {
+    display: block;
+    float: left;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div > img, body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div > svg {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--darker-text-color);
+    margin-right: 0.75rem;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div > img {
+    border-radius: 50%;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div > p {
+    font-size: 0.9rem;
+    line-height: 2rem;
+    color: var(--dark-text-color);
+}
+
+/* vote ends in text is lower to match icon view height */
+body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div.vote_ends_in > p {
+    line-height: 2.2rem;
+}
+
+/* make proposer and vote ends in area smaller with less screen size */
+@media only screen and (max-width: 1000px) {
+    body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) {
+        width: 14rem;
+    }
+    body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:first-child {
+        width: calc(100% - 14rem);
+    }
+}
+
+/* mobile view for first row */
+@media only screen and (max-width: 750px) {
+    body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col {
+        padding: 0 !important;
+        width: 100% !important;
+        clear: both !important;
+    }
+    body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > * {
+        width: auto !important;
+        display: block !important;
+        float: left !important;
+        margin-bottom: 1rem !important;
+    }
+    body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > *:not(:last-child) {
+        margin-right: 1.5rem !important;
+    }
+    body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div.vote_ends_in > p {
+        line-height: 2rem;
+    }
+    body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:not(:last-child) {
+        margin-bottom: 2rem;
+    }
 }
 
 /* style voting area */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) {
+    
+}

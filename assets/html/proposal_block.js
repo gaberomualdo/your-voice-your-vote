@@ -21,7 +21,7 @@ generateProposalBlockVotingAreaHTML = (proposal_id, votes_for, votes_against, cu
 generateProposalBlockHTML = (proposal_id, title, description, votes_for, votes_against, proposer, ends_in_days, current_user_vote) => {
     // limit description length to 50 words, and add "..." if needed
     let description_limited_length = description;
-    if(description_limited_length.split(" ").length > 50){
+    if(description_limited_length.split(" ").length > 75){
         description_limited_length = description_limited_length.split(" ").slice(0, 50).join(" ") + "...";
     }
 
@@ -42,7 +42,7 @@ generateProposalBlockHTML = (proposal_id, title, description, votes_for, votes_a
         <div class="row">
             <div class="col">
                 <h1 class="title">${title}</h1>
-                <p class="description_limited_length">${description_limited_length} ${description_limited_length == description ? "" : "<a class='expand_description'>(more)</a>"}</p>
+                <p class="description_limited_length">${description_limited_length} ${description_limited_length == description ? "" : "<a onclick='this.parentElement.parentElement.classList.add(\"show_full_description\");'>(more)</a>"}</p>
                 <p class="description_full_length">${description}</p>
             </div>
             <div class="col">

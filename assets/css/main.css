@@ -24,6 +24,7 @@ h6 { line-height: 1.6;  letter-spacing: 0; }
     --text-color: #455A64;
     --dark-text-color: #37474F;
     --darker-text-color: #1E282C;
+    --medium-text-color: #607D8B;
     --light-text-color: #78909C;
     --lighter-text-color: #90A4AE;
     --error-color: #DA1333;
