@@ -15,25 +15,3 @@ function formatDateString(dateString) {
     const dateStringSplit = dateString.split("-");
     return months[parseInt(dateStringSplit[1]) - 1] + " " + parseInt(dateStringSplit[2]).toString() + ", " + dateStringSplit[0];
 }
-
-// make search functionality
-
-// list of titles of every proposal
-let proposalsTitlesList = [];
-
-// generate proposal titles list
-(() => {
-    // variable for firebase realtime database object
-    const databaseObj = firebase.database();
-
-    // get value of proposals in database and add titles to list
-    databaseObj.ref("proposals/").once("value", (snapshot) => {
-        const databaseProposalsContent = snapshot.val();
-
-        // loop through proposals in database content and add title to list
-        for (const proposalID in databaseProposalsContent) {
-            proposalsTitlesList.push(databaseProposalsContent[proposalID].title);
-        }
-    });
-})();
-

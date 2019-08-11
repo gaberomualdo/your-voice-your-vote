@@ -4,10 +4,12 @@
     <!-- logo -->
     <?php include "logo.php" ?>
 
-    <!-- submit, search, and logout (logout removed for now) -->
+    <!-- submit, search, and logout (logout is removed for now) -->
     <ul>
         <!--<button class="log_out">Log Out</button>-->
-        <input type="text" class="search" placeholder="Search Proposals..." spellcheck="false">
+        
+        <!-- search bar is only displayed in logged-in homepage -->
+        <?php if($pagefile == "home") { echo '<input type="text" class="search" placeholder="Search Proposals..." spellcheck="false">'; } ?>
         <button class="submit" onclick="window.open('submit.php', '_self');">Submit a Proposal</button>
     </ul>
 </nav>

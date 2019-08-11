@@ -10,12 +10,16 @@ body > div.container {
     }
 }
 
+/* style tabs */
+body > div.container > div.tabs > div {
+    margin-top: 3.75rem;
+}
+
 /* style tab buttons and parent container */
 body > div.container > ul.tabButtons {
     display: block;
     list-style: none;
     overflow: hidden;
-    margin-bottom: 3.75rem;
 }
 body > div.container > ul.tabButtons > li {
     display: block;
@@ -50,8 +54,8 @@ body > div.container > ul.tabButtons > li:not(:last-child) {
 
 /* display corresponding tabs when tab buttons are active (and show activeness on tab buttons via color and border color) */
 
-/* don't show tabs normally */
-body > div.container > div.tabs > div.openProposalsTab, body > div.container > div.tabs > div.completedProposalsTab {
+/* don't show tabs normally (unless search is running) */
+body > div.container:not(.search_results_shown) > div.tabs > div.openProposalsTab, body > div.container:not(.search_results_shown) > div.tabs > div.completedProposalsTab {
     display: none;
 }
 
@@ -60,10 +64,21 @@ body > div.container.openProposalsTabShown > div.tabs > div.openProposalsTab, bo
     display: block !important;
 }
 
-/* highlight tab buttons */
-body > div.container.openProposalsTabShown > ul.tabButtons > li.openProposalsButton, body > div.container.completedProposalsTabShown > ul.tabButtons > li.completedProposalsButton {
+/* highlight tab buttons (search results tab button is highlighted when search is active) */
+body > div.container.search_results_shown > ul.tabButtons > li.searchResultsButton, body > div.container.openProposalsTabShown > ul.tabButtons > li.openProposalsButton, body > div.container.completedProposalsTabShown > ul.tabButtons > li.completedProposalsButton {
     border-color: var(--theme-color);
     color: var(--theme-color);
+}
+
+/* search proposals class functionality */
+body > div.container:not(.search_results_shown) > ul.tabButtons > li.searchResultsButton {
+    display: none;
+}
+body > div.container.search_results_shown > ul.tabButtons > li:not(.searchResultsButton) {
+    display: none;
+}
+body > div.container.search_results_shown > div.tabs > div > div.proposal_block:not(.active) {
+    display: none;
 }
 
 /* style proposal block */

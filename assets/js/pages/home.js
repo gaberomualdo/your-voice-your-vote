@@ -136,3 +136,57 @@ const voteAgainstProposal = (proposalID) => {
         })();
     });
 })();
+
+// make search functionality
+
+// list of titles and IDs of every proposal
+let proposalsTitlesList = [];
+
+// generate proposal titles and IDs list
+(() => {
+    // variable for firebase realtime database object
+    const databaseObj = firebase.database();
+
+    // get value of proposals in database and add titles to list
+    databaseObj.ref("proposals/").once("value", (snapshot) => {
+        const databaseProposalsContent = snapshot.val();
+
+        // loop through proposals in database content and add title and ID to list
+        for (const proposalID in databaseProposalsContent) {
+            proposalsTitlesList.push({title: databaseProposalsContent[proposalID].title.toLowerCase(), id: proposalID});
+        }
+    });
+})();
+
+// handle input for search bar
+document.querySelector("body > nav > ul > input.search").addEventListener("input", () => {
+    // get new value of search bar (not case sensitive) and put into variable
+    const searchQuery = document.querySelector("body > nav > ul > input.search").value.toLowerCase();
+
+    // remove any current search results by looping through proposal blocks and deactivating
+    
+    // variable for list of active proposal blocks
+    const activeProposalBlocks = Array.from(document.querySelectorAll("body > div.container > div.tabs > div > div.proposal_block.active"));
+
+    // loop through active proposal blocks and remove "active" class
+    activeProposalBlocks.forEach((element, index) => {
+        element.classList.remove("active");
+    });
+
+    // if search query has content, process query and add search results
+    if(searchQuery != ""){
+        // loop through proposals titles list and add any titles that match
+        proposalsTitlesList.forEach((currentProposalObj, index) => {
+            // if match is found, display match as a search result
+            if(currentProposalObj.title.indexOf(searchQuery) > -1){
+                document.getElementById("proposalBlock_" + currentProposalObj.id).classList.add("active");
+            }
+        });
+
+        // add search class to container
+        document.querySelector("body > div.container").classList.add("search_results_shown");
+    }else {
+        // remove search class as search query is empty
+        document.querySelector("body > div.container").classList.remove("search_results_shown");
+    }
+});

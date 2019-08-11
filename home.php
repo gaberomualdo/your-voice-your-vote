@@ -17,6 +17,7 @@
             <ul class="tabButtons">
                 <li class="openProposalsButton">Open Proposals</li>
                 <li class="completedProposalsButton">Completed Proposals</li>
+                <li class="searchResultsButton">Search Results</li>
             </ul>
 
             <!-- display loading icon while database is loading -->
