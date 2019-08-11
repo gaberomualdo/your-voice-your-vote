@@ -19,6 +19,11 @@
                 <li class="completedProposalsButton">Completed Proposals</li>
             </ul>
 
+            <!-- display loading icon while database is loading -->
+            <div class="loading_icon_container">
+                <div class="loading_icon"></div>
+            </div>
+
             <!-- tabs -->
             <div class="tabs">
                 <div class="openProposalsTab">

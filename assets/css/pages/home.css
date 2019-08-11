@@ -436,3 +436,35 @@ body > div.container > div.tabs > div.completedProposalsTab > div.proposal_block
         zoom: 85%;
     }
 }
+
+/* style loading icon and container */
+
+/* loading icon container */
+body > div.container > div.loading_icon_container {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 2.5rem;
+}
+
+/* loading icon animation */
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* loading icon */
+body > div.container > div.loading_icon_container > div.loading_icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    box-sizing: border-box;
+    border: 0.35rem solid var(--lighter-color);
+    border-radius: 50%;
+    border-top-color: var(--theme-color);
+    animation: rotating 1.13s linear infinite;
+    display: inline-block;
+}

@@ -125,5 +125,14 @@ const voteAgainstProposal = (proposalID) => {
             // set voting progress width variable
             document.querySelector("body > div.container > div.tabs").setAttribute("style", "--voting-progress-width: calc(100% - " + (voteForButtonWidth + voteAgainstButtonWidth) + "px);");
         })();
+
+        // remove loading icon as database has loaded
+        (() => {
+            // variable for loading icon container element
+            const loadingIconContainerElement = document.querySelector("body > div.container > div.loading_icon_container");
+
+            // remove loading icon container
+            loadingIconContainerElement.parentNode.removeChild(loadingIconContainerElement);
+        })();
     });
 })();
