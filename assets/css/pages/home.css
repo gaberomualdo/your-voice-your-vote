@@ -86,6 +86,11 @@ body > div.container > div.tabs > div > div.proposal_block > div.row > div.col {
     box-sizing: border-box;
 }
 
+/* proposal block margin */
+body > div.container > div.tabs > div > div.proposal_block:not(:last-child) {
+    margin-bottom: 3.5rem;
+}
+
 /* first row with title, description, proposer, and vote ends in */
 
 /* title and description */
@@ -155,6 +160,8 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:first-child
     font-size: 0.9rem;
     line-height: 2rem;
     color: var(--dark-text-color);
+    height: auto;
+    width: calc(100% - 2.75rem);
 }
 
 /* vote ends in text is lower to match icon view height */
@@ -200,8 +207,9 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:first-child
 body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) {
     margin-top: 2rem;
     box-sizing: border-box;
-    height: calc(2.5rem + 5px + (4px * 2));
+    min-height: calc(2.5rem + 5px + (4px * 2));
     padding: 4px 0;
+    position: relative;
 }
 body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > * {
     display: block;
@@ -316,9 +324,11 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2
 }
 body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p.votes_for_label {
     left: calc(2rem + 0.625rem);
+    text-align: left;
 }
 body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p.votes_against_label {
     right: calc(2rem + 0.625rem);
+    text-align: right;
 }
 
 /* style "(including you)" */
@@ -345,4 +355,84 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2
     background-color: var(--red-color);
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+}
+
+/* for completed proposals, don't show voting buttons, and make voting progress bar full width */
+
+/* don't display voting buttons */
+body > div.container > div.tabs > div.completedProposalsTab > div.proposal_block > div.row:nth-child(2) > div.voting_button_container {
+    display: none !important;
+}
+
+/* full width progress bar */
+body > div.container > div.tabs > div.completedProposalsTab > div.proposal_block > div.row:nth-child(2) > div.voting_progress {
+    width: 100% !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* for full width progress bar (completed proposal), make sure voting bar labels are in the right place */
+body > div.container > div.tabs > div.completedProposalsTab > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p.votes_for_label {
+    left: 0.625rem;
+}
+body > div.container > div.tabs > div.completedProposalsTab > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p.votes_against_label {
+    right: 0.625rem;
+}
+
+/* tablet view of progress bar and voting buttons */
+@media only screen and (max-width: 800px) {
+    /* less margin between first and second rows */
+    body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) {
+        margin-top: 1rem;
+    }
+
+    /* progress bar is full width */
+    body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress {
+        width: 100% !important;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 0.75rem;
+    }
+
+    /* for full width progress bar, make sure voting bar labels are in the right place */
+    body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p.votes_for_label {
+        left: 0.625rem;
+    }
+    body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p.votes_against_label {
+        right: 0.625rem;
+    }
+
+    /* style voting buttons and make sure they are on top */
+    body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:last-child {
+        position: absolute;
+        right: 0;
+    }
+}
+
+/* mobile view of progress bar and voting buttons */
+@media only screen and (max-width: 600px) {
+    /* progress bar container is larger */
+    body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress {
+        height: calc(5rem + 5px);
+    }
+    
+    /* voting progress labels are under the progress bar, and black color */
+    body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p {
+        top: auto;
+        bottom: calc(0.25rem + 2.5px);
+        color: var(--dark-text-color);
+        width: 50%;
+    }
+
+    /* don't display "(including you)" at all */
+    body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p > span.current_user_vote {
+        display: none !important;
+    }
+}
+
+/* super small screens view */
+@media only screen and (max-width: 405px) {
+    body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) {
+        zoom: 85%;
+    }
 }

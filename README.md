@@ -7,3 +7,4 @@ A platform where ASL students can have a voice — where students can make a cha
  - Make theme color completely dynamic
  - Possibly change name
  - Add Privacy Policy file
+ - Get firebase Blaze plan so that 100+ ppl can be connected to db at once

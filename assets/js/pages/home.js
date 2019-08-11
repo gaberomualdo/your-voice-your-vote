@@ -74,7 +74,7 @@ const voteAgainstProposal = (proposalID) => {
             const daysUntilCompletion = (dateOfCompletionDate.getTime() - currentDateToday.getTime()) / (1000 * 3600 * 24);
 
             // generate HTML for proposal block
-            const proposalBlockHTML = generateProposalBlockHTML(proposalID, currentProposal.title, currentProposal.description, votesFor, votesAgainst, { full_name: currentProposal.proposer.full_name, profile_picture: currentProposal.proposer.profile_picture_url }, daysUntilCompletion, currentUserVote);
+            const proposalBlockHTML = generateProposalBlockHTML(proposalID, currentProposal.title, currentProposal.description, votesFor, votesAgainst, { full_name: currentProposal.proposer.full_name, profile_picture: currentProposal.proposer.profile_picture_url }, daysUntilCompletion, currentUserVote, authObj.currentUser.displayName);
 
             if(dateOfCompletionDate.getTime() < currentDateToday.getTime()){
                 // vote is completed, therefore display in completed tab

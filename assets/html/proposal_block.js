@@ -5,7 +5,14 @@
 // this function is used in the main one for generating the HTML for the voting progress bar
 const generateProposalBlockVotingAreaHTML = (proposal_id, votes_for, votes_against, current_user_vote) => {
     // calculate percentage of voters that voted for
-    const votes_for_percentage = Math.floor((votes_for / (votes_for + votes_against)) * 100);
+    let votes_for_percentage;
+    
+    // case where no votes have been cast yet (just put 50%)
+    if(votes_for + votes_against == 0) {
+        votes_for_percentage = 50;
+    }else {
+        votes_for_percentage = Math.floor((votes_for / (votes_for + votes_against)) * 100);
+    }
     
     // return HTML
     return `
@@ -40,7 +47,7 @@ const refreshProposalBlockVotingAreaHTML = (proposal_id, votes_for, votes_agains
     }
 };
 
-const generateProposalBlockHTML = (proposal_id, title, description, votes_for, votes_against, proposer, ends_in_days, current_user_vote) => {
+const generateProposalBlockHTML = (proposal_id, title, description, votes_for, votes_against, proposer, ends_in_days, current_user_vote, current_user_full_name) => {
     // limit description length to 50 words, and add "..." if needed
     let description_limited_length = description;
     if(description_limited_length.split(" ").length > 75){
@@ -70,7 +77,7 @@ const generateProposalBlockHTML = (proposal_id, title, description, votes_for, v
             <div class="col">
                 <div class="proposer">
                     <img class="profile_picture" src="${proposer.profile_picture}">
-                    <p>${proposer.full_name}</p>
+                    <p>${proposer.full_name == current_user_full_name ? "You" : proposer.full_name}</p>
                 </div>
                 <div class="vote_ends_in">
                     ${getClockSVG()}
@@ -82,11 +89,13 @@ const generateProposalBlockHTML = (proposal_id, title, description, votes_for, v
         <!-- voting area -->
         <div class="row">
             <div class="voting_button_container">
-                <button class="vote_for_button ${current_user_vote == "for" ? "active" : ""}" onclick="voteForProposal('${proposal_id}');"><p>Vote For</p>${getLikeSVG()}</button>
+                <!-- don't have voting button functionality if proposal is completed -->
+                <button class="vote_for_button ${current_user_vote == "for" ? "active" : ""}" onclick="${ends_in_days < 0 ? "" : "voteForProposal('" + proposal_id + "');" }"><p>Vote For</p>${getLikeSVG()}</button>
             </div>
             ${generateProposalBlockVotingAreaHTML(proposal_id, votes_for, votes_against, current_user_vote)}
             <div class="voting_button_container">
-                <button class="vote_against_button ${current_user_vote == "against" ? "active" : ""}" onclick="voteAgainstProposal('${proposal_id}');">${getDislikeSVG()}<p>Vote Against</p></button>
+                <!-- don't have voting button functionality if proposal is completed -->
+                <button class="vote_against_button ${current_user_vote == "against" ? "active" : ""}" onclick="${ends_in_days < 0 ? "" : "voteAgainstProposal('" + proposal_id + "');" }">${getDislikeSVG()}<p>Vote Against</p></button>
             </div>
         </div>
     </div>
