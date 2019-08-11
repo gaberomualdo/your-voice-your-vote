@@ -33,6 +33,16 @@ if($pagefile == "home") {
     include "assets/img/down_arrow.svg";
     echo "' }; </script>";
 
+    // like
+    echo "<script>const getLikeSVG = () => { return '";
+    include "assets/img/like.svg";
+    echo "' }; </script>";
+
+    // dislike
+    echo "<script>const getDislikeSVG = () => { return '";
+    include "assets/img/dislike.svg";
+    echo "' }; </script>";
+
     // clock
     echo "<script>const getClockSVG = () => { return '";
     include "assets/img/clock.svg";

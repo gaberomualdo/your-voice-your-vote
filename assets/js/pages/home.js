@@ -29,7 +29,7 @@ const voteAgainstProposal = (proposalID) => {
 }
 
 // functions and features that utilize database are put in this IIFE
-(function(){
+(() => {
     // loop through proposals in database and sort into open and completed, and display in corresponding tab
     databaseObj.ref("proposals/").once("value", (snapshot) => {
         const databaseProposalsContent = snapshot.val();
@@ -85,7 +85,6 @@ const voteAgainstProposal = (proposalID) => {
             }
 
             // refresh proposal block voting area when database value has changed
-            const votingAreaToRefresh = document.getElementById("proposalBlock_" + proposalID).querySelector("div.row:nth-child(2)");
             databaseObj.ref("proposals/" + proposalID + "/").on("value", (snapshot) => {
                 const databaseProposalContent = snapshot.val();
 
@@ -110,8 +109,21 @@ const voteAgainstProposal = (proposalID) => {
                     }
                 }
                 
-                votingAreaToRefresh.innerHTML = generateProposalBlockVotingAreaHTML(proposalID, votesFor, votesAgainst, currentUserVote);
-            })
+                // refresh proposal block with function
+                refreshProposalBlockVotingAreaHTML(proposalID, votesFor, votesAgainst, currentUserVote);
+            });
         }
+
+        // set width of voting progress bar
+        (() => {
+            // get width of vote against button
+            const voteAgainstButtonWidth = document.querySelector("body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:first-child").offsetWidth;
+            
+            // get width of vote for button
+            const voteForButtonWidth = document.querySelector("body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:last-child").offsetWidth;
+
+            // set voting progress width variable
+            document.querySelector("body > div.container > div.tabs").setAttribute("style", "--voting-progress-width: calc(100% - " + (voteForButtonWidth + voteAgainstButtonWidth) + "px);");
+        })();
     });
 })();

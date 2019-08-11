@@ -34,7 +34,10 @@ h6 { line-height: 1.6;  letter-spacing: 0; }
     --error-bg: #FCDCE1;
     
     --green-color: #27ae60;
+    --green-dark-color: #208e4e;
+    
     --red-color: #DA1333;
+    --red-dark-color: #B6102B;
 
     --base-width: 1100px;
 }

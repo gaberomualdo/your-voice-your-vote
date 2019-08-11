@@ -199,16 +199,35 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:first-child
 /* style voting area */
 body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) {
     margin-top: 2rem;
-    height: 4rem;
+    box-sizing: border-box;
+    height: calc(2.5rem + 5px + (4px * 2));
+    padding: 4px 0;
 }
 body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > * {
     display: block;
     float: left;
 }
 
+/* voting button container */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container {
+    width: auto;
+    padding: 0 4px;
+}
+
 /* voting buttons */
-body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button {
-    height: 2.5rem;
+
+/* left voting button goes floats right within container; opposite should be true with right voting button as well */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:first-child > button {
+    float: right;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:last-child > button {
+    float: left;
+}
+
+/* global */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container > button {
+    display: block;
+    height: calc(2.5rem + 5px);
     box-sizing: border-box;
     padding: 0 0.8rem;
     border: none;
@@ -216,41 +235,114 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2
     font-size: 0;
     text-align: center;
     border-radius: 3px;
+    transition: background-color 0.15s ease-in-out, box-shadow 0.25s ease-in-out;
 }
-body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button.active {
-    opacity: 1;
-}
-body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button > * {
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container > button > * {
     display: inline-block;
     vertical-align: text-top;
 }
 
+/* style background colors for voting buttons */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:first-child > button {
+    background-color: var(--green-color);
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:last-child > button {
+    background-color: var(--red-color);
+}
+
+/* voting button hover effect */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:last-child > button:hover {
+    background-color: var(--red-dark-color) !important;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:first-child > button:hover {
+    background-color: var(--green-dark-color) !important;
+}
+
+/* active voting button */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:first-child > button.active {
+    box-shadow: 0 0 0 2px #fff,
+    0 0 0 4px var(--green-color);
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:last-child > button.active {
+    box-shadow: 0 0 0 2px #fff,
+    0 0 0 4px var(--red-color);
+}
+
 /* button text and icon */
-body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button > p {
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container > button > p {
     font-size: 0.9rem;
     line-height: 2.5rem;
     color: #fff;
     font-weight: bold;
 }
-body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button > svg {
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container > button > svg {
     height: 2.5rem;
-    width: 1.75rem;
+    width: 1.5rem;
     box-sizing: border-box;
-    padding: 0.75rem 0.125rem;
+    padding: 0.65rem 0.125rem;
     fill: #fff;
     margin-right: 0.5rem;
 }
 
 /* icon is on the right for button on the right side */
-body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button:first-child > svg {
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:first-child > button > svg {
     margin-right: 0;
     margin-left: 0.5rem;
 }
 
-/* style background colors for voting buttons */
-body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button:first-child {
-    background-color: var(--green-color);
+/* style voting progress bar */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress {
+    width: var(--voting-progress-width);
+    height: calc(2.5rem + 5px);
+    padding: calc(0.25rem + 2.5px) 2rem;
+    box-sizing: border-box;
+    position: relative;
 }
-body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > button:last-child {
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > div {
+    display: block;
+    float: left;
+    height: 2rem;
+}
+
+/* style labels */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p {
+    position: absolute;
+    height: 2rem;
+    line-height: 2rem;
+    color: #fff;
+    top: calc(0.25rem + 2.5px);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p.votes_for_label {
+    left: calc(2rem + 0.625rem);
+}
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p.votes_against_label {
+    right: calc(2rem + 0.625rem);
+}
+
+/* style "(including you)" */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p > span.current_user_vote {
+    opacity: 0.75;
+    font-weight: normal;
+}
+
+/* "(including you)" should only be displayed when active */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > p > span.current_user_vote:not(.active) {
+    display: none;
+}
+
+/* style left progress div */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > div.votes_for {
+    text-align: left;
+    background-color: var(--green-color);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+/* style right progress div */
+body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_progress > div.votes_against {
+    text-align: right;
     background-color: var(--red-color);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
