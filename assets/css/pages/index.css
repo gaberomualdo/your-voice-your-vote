@@ -1,3 +1,5 @@
+/* this CSS file is the stylesheet unique to the index.php file */
+
 /* style container height and padding */
 body > div.container {
     height: calc(100vh - 8.5rem);

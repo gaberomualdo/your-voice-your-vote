@@ -1,3 +1,5 @@
+/* this CSS file is the stylesheet unique to the home.php file */
+
 /* style container with margins */
 body > div.container {
     margin: 5rem 0;
