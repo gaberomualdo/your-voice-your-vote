@@ -13,7 +13,7 @@
     // title is simply "Democracy for ASL" (the site title);
     // for other pages, include the page title as well.
     if($pagefile != "index" && $pagefile != "home") {
-        echo $pagetitle . " | ";
+        echo $pagetitle . " &bull; ";
     }
     include "assets/txt/site_title.txt";
     
