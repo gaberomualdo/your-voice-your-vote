@@ -15,23 +15,30 @@ body > div.container > div.block {
     overflow: hidden;
 }
 
-/* style top area with header and description */
-body > div.container > div.block > div.top_area {
-    margin-bottom: 2.5rem;
+/* style rows */
+body > div.container > div.block > div.row {
+    display: block;
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+/* style top row with header and description */
+body > div.container > div.block > div.row:first-child {
+    margin-bottom: 1rem;
 }
 
 /* header and animation */
-body > div.container > div.block:first-child > div.top_area > h1.header {
+body > div.container > div.block:first-child > div.row:first-child > h1.header {
     font-size: 0;
     line-height: 1.35;
     font-weight: bold;
-    margin-bottom: 0.875rem;
     color: var(--dark-text-color);
     overflow: hidden;
 }
 
 /* container for animated text */
-body > div.container > div.block:first-child > div.top_area > h1.header > span.word_container {
+body > div.container > div.block:first-child > div.row:first-child > h1.header > span.word_container {
     overflow: hidden;
     position: relative;
     height: calc(2.75rem * 1.35);
@@ -40,7 +47,7 @@ body > div.container > div.block:first-child > div.top_area > h1.header > span.w
 }
 
 /* animated text (each word) */
-body > div.container > div.block:first-child > div.top_area > h1.header > span.word_container > span.word_animated {
+body > div.container > div.block:first-child > div.row:first-child > h1.header > span.word_container > span.word_animated {
     transform: translateY(110%);
     display: inline-block;
     transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1), -webkit-transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -49,29 +56,82 @@ body > div.container > div.block:first-child > div.top_area > h1.header > span.w
 }
 
 /* add spacing (spaces) between each word */
-body > div.container > div.block:first-child > div.top_area > h1.header > span.word_container:not(:last-child) {
+body > div.container > div.block:first-child > div.row:first-child > h1.header > span.word_container:not(:last-child) {
     margin-right: 0.75rem;
 }
 
 /* when animation is triggered on load */
-body > div.container > div.block:first-child > div.top_area > h1.header.animation_shown > span.word_container > span.word_animated {
+body > div.container > div.block:first-child > div.row:first-child > h1.header.animation_shown > span.word_container > span.word_animated {
     transform: translateY(0px);
 }
 
+/* style columns in second row */
+body > div.container > div.block > div.row > div.col {
+    width: 50%;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+}
+
 /* description */
-body > div.container > div.block:first-child > div.top_area > div.description {
-    margin-top: 1.5rem;
+body > div.container > div.block:first-child > div.row:nth-child(2) > div.description {
     font-size: 1rem;
     line-height: 1.5;
+    padding-right: 2.5rem;
 }
 
 /* description "headers" */
-body > div.container > div.block:first-child > div.top_area > div.description > p:not(:first-child) {
+body > div.container > div.block:first-child > div.row:nth-child(2) > div.description > p:not(:first-child) {
     margin-top: 1.5rem;
 }
 
 /* description lists */
-body > div.container > div.block:first-child > div.top_area > div.description > ul {
+body > div.container > div.block:first-child > div.row:nth-child(2) > div.description > ul {
     padding-left: 3rem;
     margin-top: 0.75rem;
+}
+
+/* style submission form */
+
+/* style all direct children (global) */
+body > div.container > div.block > div.row:nth-child(2) > div.form > *:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+/* input and textarea global styles */
+body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=text], body > div.container > div.block > div.row:nth-child(2) > div.form > textarea {
+    outline: none;
+    width: 100%;
+    float: left;
+    display: block;
+    box-sizing: border-box;
+    resize: none;
+    font-size: 1rem;
+    height: 2.5rem;
+    line-height: 1.5rem;
+    padding: calc(0.5rem - 1px) 0.75rem;
+    border: 1px solid var(--light-color);
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, height 0.3s ease-in-out;
+    border-radius: 3px;
+    box-shadow: 0 0 1px var(--light-color) inset;
+}
+
+/* style placeholders */
+body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=text]::placeholder, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea::placeholder {
+    color: var(--lighter-text-color);
+}
+
+/* on focus */
+body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=text]:focus, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus {
+    border-color: var(--theme-color);
+    box-shadow: 0 0 1px var(--light-theme-color) inset;
+}
+
+/* textarea is large when it has content or is focused */
+body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:not(:placeholder-shown) {
+    height: calc(1rem + (1.5rem * 7));
+}
+
+body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=text]:focus::placeholder, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus::placeholder {
+    color: var(--light-text-color);
 }
