@@ -58,10 +58,10 @@ body > div.container > div.col:first-child > h1.catchy_header.animation_shown > 
 }
 
 /* style text below header */
-body > div.container > div.col:first-child > h1.catchy_header ~ p {
+body > div.container > div.col:first-child > h1.catchy_header + p {
     font-size: 0.9rem;
     line-height: 1.625;
-}
+=}
 
 /* style login button (same styles as navbar login button) */
 body > div.container > div.col:first-child > button.login_alias {

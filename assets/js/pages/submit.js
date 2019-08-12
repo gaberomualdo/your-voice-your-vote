@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
     document.querySelector("body > div.container > div.block:first-child > div.row:first-child > h1.header").classList.add("animation_shown");
 
     // description and form animation (in) goes after header animation is done (can be checked with last word transition time)
-    const headerTransitionTimeMilliseconds = parseInt(document.querySelector("body > div.container > div.block:first-child > div.row:first-child > h1.header > span.word_container:last-child > span.word_animated").style.transitionDelay.split("s")[0]) + 0.6;
+    const headerTransitionTimeMilliseconds = parseInt(document.querySelector("body > div.container > div.block:first-child > div.row:first-child > h1.header > span.word_container:last-child > span.word_animated").style.transitionDelay.split("s")[0]) + 0.625;
 
     setTimeout(() => {
         // animate (in) description and form

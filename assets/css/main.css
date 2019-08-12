@@ -194,7 +194,7 @@ body > nav > ul > input.search:focus {
 
 /* for mobile, turn search bar into button that when clicked, transforms to input */
 @media only screen and (max-width: 550px) {
-    body > nav > ul > input ~ button {
+    body > nav > ul > input + button {
         margin-right: calc(2.5rem + 0.875rem);
     }
     

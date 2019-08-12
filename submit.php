@@ -58,7 +58,11 @@
                         <!-- submit button with "Submit Anonymously" checkbox -->
                         <div class="button_container">
                             <button>Submit Proposal for Approval</button>
-                            <div class="submit_anon_checkbox"><input type="checkbox"><p>Submit Anonymously</p></div>
+                            <div class="submit_anon_checkbox">
+                                <input type="checkbox" name="submit_anonymously_checkbox" id="submit_anonymously_checkbox">
+                                <label for="submit_anonymously_checkbox"></label>
+                                <p>Submit Anonymously</p>
+                            </div>
                         </div>
                     </div>
                 </div>

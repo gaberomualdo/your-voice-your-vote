@@ -17,7 +17,6 @@ body > div.container > div.block {
 
 /* style rows */
 body > div.container > div.block > div.row {
-    display: block;
     float: left;
     width: 100%;
     clear: both;
@@ -68,7 +67,6 @@ body > div.container > div.block:first-child > div.row:first-child > h1.header.a
 /* style columns in second row */
 body > div.container > div.block > div.row > div.col {
     width: 50%;
-    display: block;
     float: left;
     box-sizing: border-box;
 }
@@ -154,4 +152,87 @@ body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=
     body > div.container > div.block > div.row:nth-child(2) > div.form > textarea {
         height: calc(1rem + (1.5rem * 10)) !important;
     }
+}
+
+/* button container */
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container {
+    float: left;
+    width: 100%;
+    min-height: 2.5rem;
+    user-select: none;
+}
+
+/* button container direct children */
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > * {
+    float: left;
+    display: block;
+    height: 2.5rem;
+}
+
+/* "submit proposal" button */
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > button {
+    line-height: calc(2.5rem - 1px);
+    font-size: 0.9rem;
+    padding: 0 0.75rem;
+    border: 1px solid var(--theme-color);
+    border-radius: 3px;
+    box-sizing: border-box;
+    vertical-align: top;
+    background-color: var(--theme-color);
+    color: #fff;
+    transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 1.25rem;
+}
+
+/* button hover */
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > button:hover {
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+/* checkbox container */
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox {
+    height: 2.5rem;
+    box-sizing: border-box;
+    padding: 0.625rem 0;
+}
+
+/* checkbox container direct children */
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox > * {
+    display: block;
+    float: left;
+}
+
+/* don't display the actual checkbox */
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox > input[type=checkbox] {
+    display: none;
+}
+
+/* style checkbox label (effectively IS the checkbox) */
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox > input[type=checkbox] + label {
+    width: 1.25rem;
+    height: 1.25rem;
+    background-size: 100%;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#fff, #fff), url(../../img/checkbox_checked_icon.png);
+    margin-right: 0.5rem;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: 2px solid var(--theme-color);
+    cursor: pointer;
+}
+
+/* checkbox label when checkbox is checked */
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox > input[type=checkbox]:checked + label {
+    background-image: url(../../img/checkbox_checked_icon.png);
+}
+
+/* checkbox "submit anonymously" text */
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox > p {
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+    color: var(--text-color);
 }
