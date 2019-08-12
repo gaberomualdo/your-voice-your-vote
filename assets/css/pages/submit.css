@@ -73,6 +73,19 @@ body > div.container > div.block > div.row > div.col {
     box-sizing: border-box;
 }
 
+/* on mobile views, columns are full width and act as rows */
+@media only screen and (max-width: 850px) {
+    body > div.container > div.block > div.row > div.col {
+        width: 100%;
+        clear: both;
+    }
+
+    /* margin between columns as they are now placed vertically */
+    body > div.container > div.block > div.row > div.col:not(:last-child) {
+        margin-bottom: 2.5rem;
+    }
+}
+
 /* description */
 body > div.container > div.block:first-child > div.row:nth-child(2) > div.description {
     font-size: 1rem;
@@ -129,9 +142,16 @@ body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=
 
 /* textarea is large when it has content or is focused */
 body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:not(:placeholder-shown) {
-    height: calc(1rem + (1.5rem * 7));
+    height: calc(1rem + (1.5rem * 8));
 }
 
 body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=text]:focus::placeholder, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus::placeholder {
     color: var(--light-text-color);
+}
+
+/* on mobile views, textarea is always large */
+@media only screen and (max-width: 650px) {
+    body > div.container > div.block > div.row:nth-child(2) > div.form > textarea {
+        height: calc(1rem + (1.5rem * 10)) !important;
+    }
 }
