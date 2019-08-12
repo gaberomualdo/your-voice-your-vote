@@ -13,11 +13,35 @@
         <div class="container">
             <div class="block">
                 <div class="top_area">
-                    <h1>Submit a Proposal</h1>
-                    <p><strong>Some guidelines for writing a clear and effective proposal:</strong></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p><strong>A Brief Explanation of the Proposal Submission Process:</strong></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <!-- header has an animation on each word, so each word is separated (into <span> tags)
+                    using PHP, as well as added transition duration for the effect -->
+                    <h1 class="header">
+                        <?php
+                        (function(){
+                            $text_to_display = "Submit a Proposal";
+                            $words_to_display = explode(" ", $text_to_display);
+                            foreach ($words_to_display as $index => $word) {
+                                echo '<span class="word_container"><span class="word_animated" style="transition-delay: ', 0.2 + (0.1 * $index), 's;">', $word, '</span></span> ';
+                            }
+                        })();
+                        ?>
+                    </h1>
+
+                    <!-- animated (in) description -->
+                    <div class="description animated" style="opacity: 0;">
+                        <p><strong>Some guidelines for writing a clear and effective proposal:</strong></p>
+                        <ul>
+                            <li>Lorem Ipsum</li>
+                            <li>Lorem Ipsum</li>
+                            <li>Lorem Ipsum</li>
+                        </ul>
+                        <p><strong>Things to Note About the Submission Process:</strong></p>
+                        <ul>
+                            <li>Lorem Ipsum</li>
+                            <li>Lorem Ipsum</li>
+                            <li>Lorem Ipsum</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="form">
                     <input type="text" class="title" placeholder="Write a title...">

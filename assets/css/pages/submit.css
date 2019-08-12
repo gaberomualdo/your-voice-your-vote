@@ -1,2 +1,77 @@
 /* this CSS file is the stylesheet unique to the submit.php file */
 
+/* style container */
+body > div.container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* style block */
+body > div.container > div.block {
+    background-color: #fff;
+    box-shadow: 0 0 10px 4px var(--lighter-color), 0 0 0 transparent;
+    border-radius: 5px;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+/* style top area with header and description */
+body > div.container > div.block > div.top_area {
+    margin-bottom: 2.5rem;
+}
+
+/* header and animation */
+body > div.container > div.block:first-child > div.top_area > h1.header {
+    font-size: 0;
+    line-height: 1.35;
+    font-weight: bold;
+    margin-bottom: 0.875rem;
+    color: var(--dark-text-color);
+    overflow: hidden;
+}
+
+/* container for animated text */
+body > div.container > div.block:first-child > div.top_area > h1.header > span.word_container {
+    overflow: hidden;
+    position: relative;
+    height: calc(2.75rem * 1.35);
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+/* animated text (each word) */
+body > div.container > div.block:first-child > div.top_area > h1.header > span.word_container > span.word_animated {
+    transform: translateY(110%);
+    display: inline-block;
+    transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1), -webkit-transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin-bottom: 0;
+    font-size: 2.75rem;
+}
+
+/* add spacing (spaces) between each word */
+body > div.container > div.block:first-child > div.top_area > h1.header > span.word_container:not(:last-child) {
+    margin-right: 0.75rem;
+}
+
+/* when animation is triggered on load */
+body > div.container > div.block:first-child > div.top_area > h1.header.animation_shown > span.word_container > span.word_animated {
+    transform: translateY(0px);
+}
+
+/* description */
+body > div.container > div.block:first-child > div.top_area > div.description {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* description "headers" */
+body > div.container > div.block:first-child > div.top_area > div.description > p:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+/* description lists */
+body > div.container > div.block:first-child > div.top_area > div.description > ul {
+    padding-left: 3rem;
+    margin-top: 0.75rem;
+}
