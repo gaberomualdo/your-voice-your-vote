@@ -78,10 +78,12 @@ const voteAgainstProposal = (proposalID) => {
 
             if(dateOfCompletionDate.getTime() < currentDateToday.getTime()){
                 // vote is completed, therefore display in completed tab
-                document.querySelector("body > div.container > div.tabs > div.completedProposalsTab").innerHTML += proposalBlockHTML;
+                const completedProposalsTabElement = document.querySelector("body > div.container > div.tabs > div.completedProposalsTab");
+                completedProposalsTabElement.innerHTML = proposalBlockHTML + completedProposalsTabElement.innerHTML;
             }else{
                 // vote is open, therefore display in open tab
-                document.querySelector("body > div.container > div.tabs > div.openProposalsTab").innerHTML += proposalBlockHTML;
+                const openProposalsTabElement = document.querySelector("body > div.container > div.tabs > div.openProposalsTab");
+                openProposalsTabElement.innerHTML = proposalBlockHTML + openProposalsTabElement.innerHTML;
             }
 
             // refresh proposal block voting area when database value has changed
@@ -173,15 +175,27 @@ document.querySelector("body > nav > ul > input.search").addEventListener("input
         element.classList.remove("active");
     });
 
+    // reset search results button text to "Search Results"
+    document.querySelector("body > div.container > ul.tabButtons > li.searchResultsButton").innerText = "Search Results";
+
     // if search query has content, process query and add search results
     if(searchQuery != ""){
+        // variable for amount of search results found
+        let searchResultsAmount = 0;
+        
         // loop through proposals titles list and add any titles that match
         proposalsTitlesList.forEach((currentProposalObj, index) => {
             // if match is found, display match as a search result
             if(currentProposalObj.title.indexOf(searchQuery) > -1){
                 document.getElementById("proposalBlock_" + currentProposalObj.id).classList.add("active");
+                
+                // add to search result amount variable
+                searchResultsAmount++;
             }
         });
+
+        // if no search results were found, display "no results found" as tab button label
+        document.querySelector("body > div.container > ul.tabButtons > li.searchResultsButton").innerText = "No Results Found";
 
         // add search class to container
         document.querySelector("body > div.container").classList.add("search_results_shown");

@@ -181,10 +181,6 @@ body > nav > ul > input:focus {
 body > nav > ul > input.search:focus {
     width: 20rem;
 }
-body > nav > ul > input.search:focus:not(:placeholder-shown) {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
 
 /* decrease size of search bar for smaller screens */
 @media only screen and (max-width: 850px) {

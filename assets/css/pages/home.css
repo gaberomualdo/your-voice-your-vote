@@ -36,6 +36,12 @@ body > div.container > ul.tabButtons > li {
     transition: border-color 0.15s ease-in-out, color 0.15s ease-in-out;
     user-select: none;
 }
+
+/* search results label should not have cursor set to pointer */
+body > div.container > ul.tabButtons > li.searchResultsButton {
+    cursor: default;
+}
+
 /* margin */
 body > div.container > ul.tabButtons > li:not(:last-child) {
     margin-right: 0.5rem;
@@ -49,6 +55,11 @@ body > div.container > ul.tabButtons > li:not(:last-child) {
         font-size: 1.25rem;
         padding: 0.5rem 0.5rem;
         margin-right: 0 !important;
+    }
+
+    /* mobile view — search results tab should be full width */
+    body > div.container > ul.tabButtons > li.searchResultsButton {
+        width: 100%;
     }
 }
 
@@ -155,6 +166,7 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:first-child
     min-height: 2rem;
     overflow: auto;
 }
+
 body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div:not(:last-child) {
     margin-bottom: 1.5rem;
 }
@@ -205,9 +217,9 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:first-child
         width: auto !important;
         display: block !important;
         float: left !important;
+        margin-bottom: 1rem !important;
     }
     body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > *:not(:last-child) {
-        margin-bottom: 1rem !important;
         margin-right: 1.5rem !important;
     }
     body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div.vote_ends_in > p {

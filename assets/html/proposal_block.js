@@ -57,11 +57,11 @@ const generateProposalBlockHTML = (proposal_id, title, description, votes_for, v
     // get string for vote_ends_in text block
     let vote_ends_in_string;
     if(ends_in_days == 0){
-        vote_ends_in_string = `Vote ends <strong>today</strong>`;
+        vote_ends_in_string = `Voting ends <strong>today</strong>`;
     }else if(ends_in_days > 0){
-        vote_ends_in_string = `Vote ends in <strong>${ends_in_days} ${ends_in_days == 1 ? "day" : "days"}</strong>`;
+        vote_ends_in_string = `Voting ends in <strong>${ends_in_days} ${ends_in_days == 1 ? "day" : "days"}</strong>`;
     }else{
-        vote_ends_in_string = `Vote ended <strong>${ends_in_days * -1} ${ends_in_days == -1 ? "day" : "days"} ago</strong>`;
+        vote_ends_in_string = `Voting ended <strong>${ends_in_days * -1} ${ends_in_days == -1 ? "day" : "days"} ago</strong>`;
     }
 
     // return formatted HTML of proposal block

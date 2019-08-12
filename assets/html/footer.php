@@ -6,7 +6,7 @@
     <hr>
 
     <!-- credits -->
-    <p class="credits">Built by <?php include "assets/txt/site_author.txt" ?> (ASL Student)</p>
+    <p class="credits">&copy; <?php include "assets/txt/site_author.txt" ?> 2019&ndash;Present</p>
     
     <!-- links (includes privacy policy, and logout button) -->
     <!-- only show links if logged-in -->
