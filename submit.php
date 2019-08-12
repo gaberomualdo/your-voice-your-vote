@@ -61,7 +61,7 @@
                             <div class="submit_anon_checkbox">
                                 <input type="checkbox" name="submit_anonymously_checkbox" id="submit_anonymously_checkbox">
                                 <label for="submit_anonymously_checkbox"></label>
-                                <p>Submit Anonymously</p>
+                                <label for="submit_anonymously_checkbox" class="text">Submit Anonymously</label>
                             </div>
                         </div>
                     </div>

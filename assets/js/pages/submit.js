@@ -17,3 +17,5 @@ window.addEventListener("load", () => {
         document.querySelector("body > div.container > div.block:first-child > div.row:nth-child(2) > div.form").classList.add("fadeIn");
     }, headerTransitionTimeMilliseconds * 1000);
 });
+
+// submit button and form functionality
