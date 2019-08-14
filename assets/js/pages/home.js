@@ -195,7 +195,9 @@ document.querySelector("body > nav > ul > input.search").addEventListener("input
         });
 
         // if no search results were found, display "no results found" as tab button label
-        document.querySelector("body > div.container > ul.tabButtons > li.searchResultsButton").innerText = "No Results Found";
+        if(searchResultsAmount == 0) {
+            document.querySelector("body > div.container > ul.tabButtons > li.searchResultsButton").innerText = "No Results Found";
+        }
 
         // add search class to container
         document.querySelector("body > div.container").classList.add("search_results_shown");

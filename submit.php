@@ -27,6 +27,19 @@
                         })();
                         ?>
                     </h1>
+
+                    <!-- this is the second header, which is shown after a proposal has been submitted -->
+                    <h1 class="header" style="display: none;">
+                        <?php
+                        (function(){
+                            $text_to_display = "Thanks for Submitting!";
+                            $words_to_display = explode(" ", $text_to_display);
+                            foreach ($words_to_display as $index => $word) {
+                                echo '<span class="word_container"><span class="word_animated" style="transition-delay: ', 0.2 + (0.1 * $index), 's;">', $word, '</span></span> ';
+                            }
+                        })();
+                        ?>
+                    </h1>
                 </div>
                 
                 <!-- second row is split into two columns — the description, and the actual submission form -->
@@ -65,6 +78,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- third row is shown after a proposal has been submitted, and contains extra description and text about
+                the submission process -->
+                <div class="row animated" style="display: none; opacity: 0;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
         </div>

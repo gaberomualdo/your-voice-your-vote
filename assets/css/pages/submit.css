@@ -127,6 +127,12 @@ body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=
     box-shadow: 0 0 1px var(--light-color) inset;
 }
 
+/* input and textarea error class (add red border) */
+body > div.container > div.block > div.row:nth-child(2) > div.form > input.error[type=text], body > div.container > div.block > div.row:nth-child(2) > div.form > textarea.error {
+    transition: color 0s ease-in-out, border-color 0s ease-in-out, box-shadow 0.3s ease-in-out, height 0.3s ease-in-out;
+    border-color: var(--red-color);
+}
+
 /* style placeholders */
 body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=text]::placeholder, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea::placeholder {
     color: var(--lighter-text-color);
@@ -218,7 +224,6 @@ body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_
     background-position: 0 0;
     background-repeat: no-repeat;
     background-image: linear-gradient(#fff, #fff), url(../../img/checkbox_checked_icon.png);
-    margin-right: 0.5rem;
     border-radius: 3px;
     box-sizing: border-box;
     border: 2px solid var(--theme-color);
@@ -233,7 +238,19 @@ body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_
 /* checkbox "submit anonymously" text */
 body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox > label.text {
     font-size: 0.85rem;
+    padding-left: 0.5rem;
     line-height: 1.25rem;
     color: var(--text-color);
     cursor: pointer;
+}
+
+/* style third row with text about submission process (shown after user has submitted a proposal) */
+body > div.container > div.block:first-child > div.row:nth-child(3) {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* description "headers" */
+body > div.container > div.block:first-child > div.row:nth-child(3) > p:not(:last-child) {
+    margin-bottom: 1.5rem;
 }

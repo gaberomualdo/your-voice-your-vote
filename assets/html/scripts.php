@@ -40,5 +40,15 @@ if($pagefile == "home") {
 }
 ?>
 
+<!-- if page is submit.php, put those necessary icons into JS variables -->
+<?php
+if($pagefile == "submit") {
+    // anonymous user profile picture
+    echo "<script>const getAnonymousUserPNG = () => { return '";
+    include "assets/img/anonymous_user_icon.txt";
+    echo "' }; </script>";
+}
+?>
+
 <!-- page-specific script -->
 <script src="assets/js/pages/<?php echo $pagefile ?>.js"></script>
