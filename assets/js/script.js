@@ -18,18 +18,15 @@ setInterval(function(){
 }, 1000);*/
 
 // configure and initialize firebase
-firebase.initializeApp(firebaseConfigObject);
+firebase.initializeApp(FIREBASE_CONFIG_OBJ);
 
 // this function will execute after page has loaded and user either is logged in, or logs out
 firebase.auth().onAuthStateChanged((user) => {
-    // variable for current HTML page filename (file extension removed)
-    let currentpage_filename = window.location.pathname.split("/").pop().split(".")[0];
-
     if(user && !user.email.endsWith("asl.org")) {
         // user is logged in, but user is using an email address
         // not hosted on asl.org, so display error and delete user
         // if at homepage; else, go to homepage.
-        if(currentpage_filename == "index"){
+        if(PAGEFILE == "index"){
             // display error in homepage, and then delete user
             displayAuthenticationError("Please use an @asl.org email address.");
             firebase.auth().currentUser.delete();
@@ -39,12 +36,12 @@ firebase.auth().onAuthStateChanged((user) => {
         }
     }else if(user){
         // user is logged in, so redirect to logged-in homepage if not already in it
-        if(currentpage_filename == "index"){
+        if(PAGEFILE == "index"){
             window.open("home.php", "_self");
         }
     }else{
         // user is not logged in, so redirect to public homepage if not already in it
-        if(currentpage_filename != "index"){
+        if(PAGEFILE != "index"){
             window.open("index.php", "_self");
         }
     }
