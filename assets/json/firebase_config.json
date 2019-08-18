@@ -1,0 +1,9 @@
+{
+    apiKey: "AIzaSyCNOgpFbSJHlmsnB-uVQrVcPn4dX_gmImU",
+    authDomain: "democracy-for-asl.firebaseapp.com",
+    databaseURL: "https://democracy-for-asl.firebaseio.com",
+    projectId: "democracy-for-asl",
+    storageBucket: "",
+    messagingSenderId: "816314598868",
+    appId: "1:816314598868:web:ffa7a522bb3389ee"
+}

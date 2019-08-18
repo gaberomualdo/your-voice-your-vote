@@ -18,15 +18,7 @@ setInterval(function(){
 }, 1000);*/
 
 // configure and initialize firebase
-firebase.initializeApp({
-    apiKey: "AIzaSyCNOgpFbSJHlmsnB-uVQrVcPn4dX_gmImU",
-    authDomain: "democracy-for-asl.firebaseapp.com",
-    databaseURL: "https://democracy-for-asl.firebaseio.com",
-    projectId: "democracy-for-asl",
-    storageBucket: "",
-    messagingSenderId: "816314598868",
-    appId: "1:816314598868:web:ffa7a522bb3389ee"
-});
+firebase.initializeApp(firebaseConfigObject);
 
 // this function will execute after page has loaded and user either is logged in, or logs out
 firebase.auth().onAuthStateChanged((user) => {

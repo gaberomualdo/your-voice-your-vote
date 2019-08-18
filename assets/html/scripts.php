@@ -10,6 +10,13 @@ if($pagefile != "index"){
 }
 ?>
 
+<!-- include variable for firebase config by including JSON file -->
+<?php
+echo "<script>const firebaseConfigObject = ";
+include "assets/json/firebase_config.json";
+echo ";</script>";
+?>
+
 <!-- main script -->
 <script src="assets/js/script.js"></script>
 
