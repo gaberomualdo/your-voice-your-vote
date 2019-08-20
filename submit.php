@@ -48,15 +48,15 @@
                     <div class="col description animated" style="opacity: 0;">
                         <p><strong>Some guidelines for writing a clear and effective proposal:</strong></p>
                         <ul>
-                            <li>Lorem Ipsum</li>
-                            <li>Lorem Ipsum</li>
-                            <li>Lorem Ipsum</li>
+                            <li>Be concise</li>
+                            <li>Give examples of how your proposal would work in practice</li>
+                            <li>Do not submit non-serious proposals</li>
                         </ul>
                         <p><strong>Things to Note About the Submission Process:</strong></p>
                         <ul>
-                            <li>Lorem Ipsum</li>
-                            <li>Lorem Ipsum</li>
-                            <li>Lorem Ipsum</li>
+                            <li>Your proposal must first be approved by the administration/StuCo before voting commences</li>
+                            <li>If your proposal has been rejected, you may receive a notice from the administration/StuCo (unless you submitted it anonymously)</li>
+                            <li>Regardless of the vote, the administration/StuCo may decide whether or not to proceed with the proposal</li>
                         </ul>
                     </div>
                 
@@ -83,9 +83,7 @@
                 <!-- third row is shown after a proposal has been submitted, and contains extra description and text about
                 the submission process -->
                 <div class="row animated" style="display: none; opacity: 0;">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Your proposal has been submitted for approval by the administration/StuCo. If your proposal is approved, it will be available for voting for a set period of time. If your proposal is rejected, you may be notified. The administration/StuCo may still choose to proceed, or otherwise, regardless of the vote's result.</p>
                 </div>
             </div>
         </div>
