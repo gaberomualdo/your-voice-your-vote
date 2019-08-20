@@ -107,9 +107,9 @@ document.querySelector("body > nav > ul > button.login").addEventListener("click
     // create Google auth provider object
     const provider = new firebase.auth.GoogleAuthProvider();
 
-    // show domain "@asl.org" at end of email field
+    // show domain (e.g. "@asl.org") at end of email field
     provider.setCustomParameters({
-        "hd": "asl.org",
+        "hd": SCHOOL_EMAIL_DOMAIN,
     });
 
     // sign in with redirect (we previously used sign-in with popup, but

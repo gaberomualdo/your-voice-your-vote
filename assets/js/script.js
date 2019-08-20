@@ -22,13 +22,13 @@ firebase.initializeApp(FIREBASE_CONFIG_OBJ);
 
 // this function will execute after page has loaded and user either is logged in, or logs out
 firebase.auth().onAuthStateChanged((user) => {
-    if(user && !user.email.endsWith("asl.org")) {
-        // user is logged in, but user is using an email address
-        // not hosted on asl.org, so display error and delete user
+    if(user && !user.email.endsWith(SCHOOL_EMAIL_DOMAIN)) {
+        // user is logged in, but user is using an email address not
+        // hosted on school domain, so display error and delete user
         // if at homepage; else, go to homepage.
         if(PAGEFILE == "index"){
             // display error in homepage, and then delete user
-            displayAuthenticationError("Please use an @asl.org email address.");
+            displayAuthenticationError("Please use an @"  + SCHOOL_EMAIL_DOMAIN + " email address.");
             firebase.auth().currentUser.delete();
         }else {
             // go to homepage

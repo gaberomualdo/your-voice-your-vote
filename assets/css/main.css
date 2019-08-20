@@ -76,7 +76,7 @@ body > nav {
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: #fff;
-    box-shadow: 0 4px 8px var(--lighter-color), 0 0 0 transparent;
+    box-shadow: 0 4px 8px rgba(38,50,56,0.1), 0 0 0 transparent;
     position: sticky;
     top: 0;
     z-index: 9999;

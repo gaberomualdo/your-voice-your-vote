@@ -17,6 +17,8 @@ echo "<script>const FIREBASE_CONFIG_OBJ = ";
 include "assets/json/firebase_config.json";
 echo "; const PAGEFILE = '";
 echo $pagefile;
+echo "'; const SCHOOL_EMAIL_DOMAIN = '";
+include "assets/txt/school_domain.txt";
 echo "';</script>";
 ?>
 

@@ -1,0 +1,1 @@
+<?php $SUBMISSION_PLATFORM_PASSWORD = "abc123"; ?>
