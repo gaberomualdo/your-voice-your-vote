@@ -289,6 +289,11 @@
         
         <script>
 
+        // redirect to "/submission_platform/" if page is "/submission_platform"
+        if(!window.location.href.endsWith("/")) {
+            window.open("submission_platform/", "_self");
+        }
+
         // configure and initialize firebase
         firebase.initializeApp(<?php include "../assets/json/firebase_config.json"; ?>);
 
@@ -364,8 +369,8 @@
                                 
                                 <!-- approve and reject proposal buttons -->
                                 <div class="buttons_container">
-                                    <button class="approve" onclick="if(confirm('Approve this proposal?')){ approveProposal('${objectID}'); }">Approve Proposal</button>
-                                    <button class="reject" onclick="if(confirm('Reject this proposal by ${submissionPlatformContent[objectID].proposer.email}?')){ rejectProposal('${objectID}'); }">Reject Proposal</button>
+                                    <button class="approve" onclick="if(confirm('Approve this proposal?')){ approveProposal('${objectID}'); alert('Proposer was: ${submissionPlatformContent[objectID].proposer.email}'); }">Approve Proposal</button>
+                                    <button class="reject" onclick="if(confirm('Reject this proposal?')){ rejectProposal('${objectID}'); alert('Proposer was: ${submissionPlatformContent[objectID].proposer.email}'); }">Reject Proposal</button>
                                 </div>
                             </div>
                             ` + proposalsToApproveElement.innerHTML;
