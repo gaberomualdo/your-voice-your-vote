@@ -144,18 +144,18 @@ const voteAgainstProposal = (proposalID) => {
 // list of titles and IDs of every proposal
 let proposalsTitlesList = [];
 
-// generate proposal titles and IDs list
+// generate proposal content and IDs list
 (() => {
     // variable for firebase realtime database object
     const databaseObj = firebase.database();
 
-    // get value of proposals in database and add titles to list
+    // get value of proposals in database and add content to list
     databaseObj.ref("proposals/").once("value", (snapshot) => {
         const databaseProposalsContent = snapshot.val();
 
-        // loop through proposals in database content and add title and ID to list
+        // loop through proposals in database content and add content and ID to list
         for (const proposalID in databaseProposalsContent) {
-            proposalsTitlesList.push({title: databaseProposalsContent[proposalID].title.toLowerCase(), id: proposalID});
+            proposalsContentList.push({title: databaseProposalsContent[proposalID].title.toLowerCase(), description: databaseProposalsContent[proposalID].description, name: databaseProposalsContent[proposalID].proposer.full_name, id: proposalID});
         }
     });
 })();
@@ -189,7 +189,7 @@ document.querySelector("body > nav > ul > input.search").addEventListener("input
         // loop through proposals titles list and add any titles that match
         proposalsTitlesList.forEach((currentProposalObj, index) => {
             // if match is found, display match as a search result
-            if(currentProposalObj.title.indexOf(searchQuery) > -1){
+            if(currentProposalObj.title.indexOf(searchQuery) > -1 || currentProposalObj.description.indexOf(searchQuery) > -1 || currentProposalObj.name.indexOf(searchQuery) > -1){
                 document.getElementById("proposalBlock_" + currentProposalObj.id).classList.add("active");
                 
                 // add to search result amount variable
