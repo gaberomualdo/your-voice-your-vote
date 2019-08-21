@@ -70,6 +70,45 @@ body > nav, body > div.container, body > footer {
     }
 }
 
+/* default classes */
+
+/* catchy header */
+.default_style_catchy_header {
+    font-size: 0;
+    line-height: 1.35;
+    font-weight: bold;
+    color: var(--dark-text-color);
+    overflow: hidden;
+}
+
+/* container for animated text */
+.default_style_catchy_header > span.word_container {
+    overflow: hidden;
+    position: relative;
+    height: calc(2.75rem * 1.35);
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+/* animated text (each word) */
+.default_style_catchy_header > span.word_container > span.word_animated {
+    transform: translateY(110%);
+    display: inline-block;
+    transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1), -webkit-transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin-bottom: 0;
+    font-size: 2.75rem;
+}
+
+/* add spacing (spaces) between each word */
+.default_style_catchy_header > span.word_container:not(:last-child) {
+    margin-right: 0.75rem;
+}
+
+/* when animation is triggered on load */
+.default_style_catchy_header.animation_shown > span.word_container > span.word_animated {
+    transform: translateY(0px);
+}
+
 /* navbar */
 body > nav {
     height: 4.5rem;

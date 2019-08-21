@@ -45,4 +45,7 @@
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/pages/<?php echo $pagefile ?>.css">
+
+    <!-- PHP -->
+    <?php include "generate_catchy_header.php"; ?>
 </head>

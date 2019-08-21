@@ -18,50 +18,16 @@ body > div.container > div.col:first-child {
     padding-top: 2.5rem;
 }
 
-
-/* style catchy header with EPIC animation on each word */
-body > div.container > div.col:first-child > h1.catchy_header {
-    font-size: 0;
-    line-height: 1.35;
-    font-weight: bold;
+/* style header */
+body > div.container > div.col:first-child > h1.header {
     margin-bottom: 0.875rem;
-    color: var(--dark-text-color);
-    overflow: hidden;
-}
-
-/* container for animated text */
-body > div.container > div.col:first-child > h1.catchy_header > span.word_container {
-    overflow: hidden;
-    position: relative;
-    height: calc(2.75rem * 1.35);
-    display: inline-block;
-    margin-bottom: 0;
-}
-
-/* animated text (each word) */
-body > div.container > div.col:first-child > h1.catchy_header > span.word_container > span.word_animated {
-    transform: translateY(110%);
-    display: inline-block;
-    transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1), -webkit-transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-    margin-bottom: 0;
-    font-size: 2.75rem;
-}
-
-/* add spacing (spaces) between each word */
-body > div.container > div.col:first-child > h1.catchy_header > span.word_container:not(:last-child) {
-    margin-right: 0.75rem;
-}
-
-/* when animation is triggered on load */
-body > div.container > div.col:first-child > h1.catchy_header.animation_shown > span.word_container > span.word_animated {
-    transform: translateY(0px);
 }
 
 /* style text below header */
-body > div.container > div.col:first-child > h1.catchy_header + p {
+body > div.container > div.col:first-child > h1.header + p {
     font-size: 0.9rem;
     line-height: 1.625;
-=}
+}
 
 /* style login button (same styles as navbar login button) */
 body > div.container > div.col:first-child > button.login_alias {

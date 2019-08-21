@@ -8,15 +8,15 @@ document.querySelector("body > div.container > div.col:first-child > button.logi
 // display animations when page is loaded
 window.addEventListener("load", () => {
     // header animation
-    document.querySelector("body > div.container > div.col:first-child > h1.catchy_header").classList.add("animation_shown");
+    document.querySelector("body > div.container > div.col:first-child > h1.header").classList.add("animation_shown");
     
     // button, and text animations in go after header animation is done (can be checked with last word transition time)
-    const headerTransitionTimeMilliseconds = parseInt(document.querySelector("body > div.container > div.col:first-child > h1.catchy_header > span.word_container:last-child > span.word_animated").style.transitionDelay.split("s")[0]) + 0.6;
+    const headerTransitionTimeMilliseconds = parseInt(document.querySelector("body > div.container > div.col:first-child > h1.header > span.word_container:last-child > span.word_animated").style.transitionDelay.split("s")[0]) + 0.6;
 
     setTimeout(() => {
         // animate text
-        document.querySelector("body > div.container > div.col:first-child > h1.catchy_header ~ p").style.opacity = "1";
-        document.querySelector("body > div.container > div.col:first-child > h1.catchy_header ~ p").classList.add("fadeInUp");
+        document.querySelector("body > div.container > div.col:first-child > h1.header + p").style.opacity = "1";
+        document.querySelector("body > div.container > div.col:first-child > h1.header + p").classList.add("fadeInUp");
 
         // animate button
         document.querySelector("body > div.container > div.col:first-child > button.login_alias").style.opacity = "1";
@@ -41,6 +41,10 @@ window.addEventListener("load", () => {
 
 // function for displaying authentication/sign-in error
 const displayAuthenticationError = (errorMessage) => {
+    // make sure page is displayed before anything happens, and remove initial display variable
+    document.body.style.display = "block";
+    window.history.pushState({}, "Go back to main page", "/");
+
     // for mobile devices, simply alert; otherwise, display error box
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
         alert(errorMessage);
@@ -51,7 +55,7 @@ const displayAuthenticationError = (errorMessage) => {
 }
 
 // when page is loaded after authenticating w/Google, check for errors
-firebase.auth().getRedirectResult().catch((error) => {
+firebase.auth().getRedirectResult().catch((error) => {    
     // Handle errors and display error message
 
     // display error message accordingly
@@ -111,6 +115,9 @@ document.querySelector("body > nav > ul > button.login").addEventListener("click
     provider.setCustomParameters({
         "hd": SCHOOL_EMAIL_DOMAIN,
     });
+
+    // push initial_display=none variable to URL
+    window.history.pushState({}, "Removed Auto-Display On Load", "?initial_display=none");
 
     // sign in with redirect (we previously used sign-in with popup, but
     // that failed in browsers which disabled cross-site tracking).

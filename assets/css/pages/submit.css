@@ -27,43 +27,6 @@ body > div.container > div.block > div.row:first-child {
     margin-bottom: 1rem;
 }
 
-/* header and animation */
-body > div.container > div.block:first-child > div.row:first-child > h1.header {
-    font-size: 0;
-    line-height: 1.35;
-    font-weight: bold;
-    color: var(--dark-text-color);
-    overflow: hidden;
-}
-
-/* container for animated text */
-body > div.container > div.block:first-child > div.row:first-child > h1.header > span.word_container {
-    overflow: hidden;
-    position: relative;
-    height: calc(2.75rem * 1.35);
-    display: inline-block;
-    margin-bottom: 0;
-}
-
-/* animated text (each word) */
-body > div.container > div.block:first-child > div.row:first-child > h1.header > span.word_container > span.word_animated {
-    transform: translateY(110%);
-    display: inline-block;
-    transition: transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1), -webkit-transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-    margin-bottom: 0;
-    font-size: 2.75rem;
-}
-
-/* add spacing (spaces) between each word */
-body > div.container > div.block:first-child > div.row:first-child > h1.header > span.word_container:not(:last-child) {
-    margin-right: 0.75rem;
-}
-
-/* when animation is triggered on load */
-body > div.container > div.block:first-child > div.row:first-child > h1.header.animation_shown > span.word_container > span.word_animated {
-    transform: translateY(0px);
-}
-
 /* style columns in second row */
 body > div.container > div.block > div.row > div.col {
     width: 50%;

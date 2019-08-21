@@ -178,6 +178,9 @@ document.querySelector("body > nav > ul > input.search").addEventListener("input
     // reset search results button text to "Search Results"
     document.querySelector("body > div.container > ul.tabButtons > li.searchResultsButton").innerText = "Search Results";
 
+    // reset "no_results_found" class
+    document.querySelector("body > div.container > ul.tabButtons > li.searchResultsButton").classList.remove("no_results_found");
+
     // if search query has content, process query and add search results
     if(searchQuery != ""){
         // variable for amount of search results found
@@ -194,9 +197,10 @@ document.querySelector("body > nav > ul > input.search").addEventListener("input
             }
         });
 
-        // if no search results were found, display "no results found" as tab button label
+        // if no search results were found, display "no results found" as tab button label, and add "no_results_found" class
         if(searchResultsAmount == 0) {
             document.querySelector("body > div.container > ul.tabButtons > li.searchResultsButton").innerText = "No Results Found";
+            document.querySelector("body > div.container > ul.tabButtons > li.searchResultsButton").classList.add("no_results_found");
         }
 
         // add search class to container

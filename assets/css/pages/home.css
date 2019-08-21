@@ -57,6 +57,7 @@ body > div.container > ul.tabButtons > li:not(:last-child) {
         font-size: 1.25rem;
         padding: 0.5rem 0.5rem;
         margin-right: 0 !important;
+        word-spacing: 100vw;
     }
 
     /* mobile view — search results tab should be full width */
@@ -78,9 +79,14 @@ body > div.container.openProposalsTabShown > div.tabs > div.openProposalsTab, bo
 }
 
 /* highlight tab buttons (search results tab button is highlighted when search is active) */
-body > div.container.search_results_shown > ul.tabButtons > li.searchResultsButton, body > div.container.openProposalsTabShown > ul.tabButtons > li.openProposalsButton, body > div.container.completedProposalsTabShown > ul.tabButtons > li.completedProposalsButton {
+body > div.container.search_results_shown > ul.tabButtons > li.searchResultsButton:not(.no_results_found), body > div.container.openProposalsTabShown > ul.tabButtons > li.openProposalsButton, body > div.container.completedProposalsTabShown > ul.tabButtons > li.completedProposalsButton {
     border-color: var(--theme-color);
     color: var(--theme-color);
+}
+
+/* search tab should always have normal word spacing */
+body > div.container.search_results_shown > ul.tabButtons > li.searchResultsButton {
+    word-spacing: normal !important;
 }
 
 /* search proposals class functionality */
@@ -420,6 +426,10 @@ body > div.container > div.tabs > div.completedProposalsTab > div.proposal_block
         width: 100% !important;
         padding-left: 0;
         padding-right: 0;
+    }
+
+    /* progress bar has margin if there is any voting buttons */
+    body > div.container > div.tabs > div:not(.completedProposalsTab) > div.proposal_block > div.row:nth-child(2) > div.voting_progress {
         margin-top: 0.75rem;
     }
 
