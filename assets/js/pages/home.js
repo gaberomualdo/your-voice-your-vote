@@ -141,8 +141,8 @@ const voteAgainstProposal = (proposalID) => {
 
 // make search functionality
 
-// list of titles and IDs of every proposal
-let proposalsTitlesList = [];
+// list of content and IDs of every proposal
+let proposalsContentList = [];
 
 // generate proposal content and IDs list
 (() => {
@@ -155,10 +155,12 @@ let proposalsTitlesList = [];
 
         // loop through proposals in database content and add content and ID to list
         for (const proposalID in databaseProposalsContent) {
-            proposalsContentList.push({title: databaseProposalsContent[proposalID].title.toLowerCase(), description: databaseProposalsContent[proposalID].description, name: databaseProposalsContent[proposalID].proposer.full_name, id: proposalID});
+            proposalsContentList.push({title: databaseProposalsContent[proposalID].title.toLowerCase(), description: databaseProposalsContent[proposalID].description.toLowerCase(), name: databaseProposalsContent[proposalID].proposer.full_name.toLowerCase(), id: proposalID});
         }
     });
 })();
+
+console.log(proposalsContentList);
 
 // handle input for search bar
 document.querySelector("body > nav > ul > input.search").addEventListener("input", () => {
@@ -187,7 +189,7 @@ document.querySelector("body > nav > ul > input.search").addEventListener("input
         let searchResultsAmount = 0;
         
         // loop through proposals titles list and add any titles that match
-        proposalsTitlesList.forEach((currentProposalObj, index) => {
+        proposalsContentList.forEach((currentProposalObj, index) => {
             // if match is found, display match as a search result
             if(currentProposalObj.title.indexOf(searchQuery) > -1 || currentProposalObj.description.indexOf(searchQuery) > -1 || currentProposalObj.name.indexOf(searchQuery) > -1){
                 document.getElementById("proposalBlock_" + currentProposalObj.id).classList.add("active");
