@@ -17,8 +17,8 @@ const generateProposalBlockVotingAreaHTML = (proposal_id, votes_for, votes_again
     // return HTML
     return `
     <div class="voting_progress">
-        <div class="votes_for" style="width: ${votes_for_percentage}%"></div>
-        <div class="votes_against" style="width: ${100 - votes_for_percentage}%"></div>
+        <div class="votes_for" style="width: ${votes_for_percentage}%; ${votes_for_percentage == 100 ? "border-radius: 3px;" : "" }"></div>
+        <div class="votes_against" style="width: ${100 - votes_for_percentage}%; ${100 - votes_for_percentage == 100 ? "border-radius: 3px;" : "" }"></div>
         <p class="votes_for_label">${votes_for} in favor <span class='current_user_vote ${current_user_vote == "for" ? "active" : ""}'>(including you)</span></p>
         <p class="votes_against_label">${votes_against} against <span class='current_user_vote ${current_user_vote == "against" ? "active" : ""}'>(including you)</span></p>
     </div>
