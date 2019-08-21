@@ -236,6 +236,9 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:first-child
     body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:not(:last-child) {
         margin-bottom: 2rem;
     }
+    body > div.container > div.tabs > div > div.proposal_block > div.row:first-child > div.col:nth-child(2) > div > p {
+        width: auto;
+    }
 }
 
 /* style voting area */
