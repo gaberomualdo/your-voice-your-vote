@@ -8,4 +8,3 @@ A platform where ASL students can have a voice — where students can make a cha
  - Get firebase Blaze plan so that 100+ ppl can be connected to db at once
  - choose password for submission platform
  - add domain to authorized firebase domains
- - remove projects.xtrp.io from authorized domains in Firebase
