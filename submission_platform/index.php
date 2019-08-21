@@ -300,8 +300,8 @@
         // variable for firebase database object
         const databaseObj = firebase.database();
 
-        // when "go" button on login form is clicked, handle form
-        document.querySelector("body > div.container > div.login_area > button").addEventListener("click", () => {
+        // function for logging in
+        const loginToSubmissionPlatform = () => {
             // get value of password input
             const passwordInputValue = document.querySelector("body > div.container > div.login_area > input[type=password]").value;
 
@@ -385,6 +385,16 @@
 
             // send request
             request.send(null);
+        };
+
+        // when "go" button on login form is clicked, login to platform
+        document.querySelector("body > div.container > div.login_area > button").addEventListener("click", loginToSubmissionPlatform);
+
+        // when enter key is hit on password field, login
+        document.querySelector("body > div.container > div.login_area > input[type=password]").addEventListener("keydown", (event) => {
+            if(event.keyCode == 13) {
+                loginToSubmissionPlatform();
+            }
         });
 
         // function to approve proposal
