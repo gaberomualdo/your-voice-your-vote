@@ -6,8 +6,13 @@
     <!-- include HEAD tag -->
     <?php include "assets/html/head.php" ?>
     
-    <!-- body tag — no initial display if URL variable for display is set to true -->
-    <body <?php if(isset($_GET["initial_display"]) && $_GET["initial_display"] == "none") { echo "style='display: none;'"; } ?>>
+    <!-- body tag — display loading if URL variable for loading authentication is set to true -->
+    <body <?php if(isset($_GET["loading_auth"]) && $_GET["loading_auth"] == "true") { echo "class='loading_auth'"; } ?>>
+        <!-- loading box if authentication is loading -->
+        <div class="loading_auth_container default_style_loading_container">
+            <div class="default_style_loading_loader"></div>
+        </div>
+
         <!-- include navbar -->
         <?php include "assets/html/nav.php" ?>
 

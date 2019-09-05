@@ -1,5 +1,15 @@
 /* this CSS file is the stylesheet unique to the index.php file */
 
+/* if authentication (e.g. login) is loading, show loading icon and nothing else */
+body.loading_auth > *:not(.loading_auth_container) {
+    display: none !important;
+}
+
+/* otherwise, show everything except loading icon */
+body:not(.loading_auth) > div.loading_auth_container {
+    display: none !important;
+}
+
 /* style container height and padding */
 body > div.container {
     height: calc(100vh - 8.5rem);

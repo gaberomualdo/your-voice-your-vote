@@ -109,6 +109,39 @@ body > nav, body > div.container, body > footer {
     transform: translateY(0px);
 }
 
+/* default style loading container and loader */
+/* style loading icon and container */
+
+/* loading icon container */
+.default_style_loading_container {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 2.5rem;
+}
+
+/* loading icon animation */
+@keyframes loading_icon_rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* loading icon */
+.default_style_loading_container > div.default_style_loading_loader {
+    width: 3.5rem;
+    height: 3.5rem;
+    box-sizing: border-box;
+    border: 0.35rem solid var(--lighter-color);
+    border-radius: 50%;
+    border-top-color: var(--theme-color);
+    animation: loading_icon_rotating 1.13s linear infinite;
+    display: inline-block;
+}
+
 /* navbar */
 body > nav {
     height: 4.5rem;

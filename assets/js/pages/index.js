@@ -41,7 +41,7 @@ window.addEventListener("load", () => {
 
 // function for displaying authentication/sign-in error
 const displayAuthenticationError = (errorMessage) => {
-    // make sure page is displayed before anything happens, and remove initial display variable
+    // make sure page is displayed before anything happens, and remove any GET variables
     document.body.style.display = "block";
     window.history.pushState({}, "Go back to main page", "/");
 
@@ -116,8 +116,8 @@ document.querySelector("body > nav > ul > button.login").addEventListener("click
         "hd": SCHOOL_EMAIL_DOMAIN,
     });
 
-    // push initial_display=none variable to URL
-    window.history.pushState({}, "Removed Auto-Display On Load", "?initial_display=none");
+    // push loading_auth=true variable to URL
+    window.history.pushState({}, "Removed Auto-Display On Load", "?loading_auth=true");
 
     // sign in with redirect (we previously used sign-in with popup, but
     // that failed in browsers which disabled cross-site tracking).
