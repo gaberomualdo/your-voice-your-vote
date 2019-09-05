@@ -90,7 +90,7 @@ const loginToSubmissionPlatform = () => {
                         <!-- approve and reject proposal buttons -->
                         <div class="buttons_container">
                             <button class="approve" onclick="if(confirm('Approve this proposal?')){ approveProposal('${objectID}'); }">Approve Proposal</button>
-                            <button class="reject" onclick="if(confirm('Reject this proposal?')){ rejectProposal('${objectID}'); alert('Proposer was by: ${submissionPlatformContent[objectID].proposer.email}'); }">Reject Proposal</button>
+                            <button class="reject" onclick="if(confirm('Reject this proposal?')){ rejectProposal('${objectID}'); alert('Proposal was by: ${submissionPlatformContent[objectID].proposer.email}'); }">Reject Proposal</button>
                         </div>
                     </div>
                     ` + proposalsToApproveElement.innerHTML;
@@ -126,7 +126,7 @@ const loginToSubmissionPlatform = () => {
 
                         <!-- rescind proposal button -->
                         <div class="buttons_container">
-                            <button class="approve" onclick="if(confirm('Rescind this proposal?')){ rescindProposal('${objectID}'); }">Rescind Proposal</button>
+                            <button class="rescind" onclick="if(confirm('Rescind this proposal?')){ rescindProposal('${objectID}'); }">Rescind Proposal</button>
                         </div>
                     </div>
                     ` + activeProposalsElement.innerHTML;

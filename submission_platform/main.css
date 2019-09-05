@@ -19,7 +19,7 @@ body > div.container {
 }
 
 /* container is full width (apart from a small margin) on smaller screens */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
     body > div.container {
         padding: 0 0.75rem !important;
     }
@@ -185,20 +185,19 @@ body > div.container > div.logged_in_area > div.tabs > div.tab > h1.tab_header {
     height: 3.5rem;
     line-height: 3.5rem;
     font-size: 2rem;
+    border-bottom: 1px solid #ccc;
 }
 
 /* proposal */
 body > div.container > div.logged_in_area > div.tabs > div.tab > div.proposal {
     background-color: #fff;
-    border-top: 1px solid #ccc;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
+    padding-bottom: 2.5rem;
     overflow: hidden;
     box-sizing: border-box;
 }
-
-/* margin between proposals */
 body > div.container > div.logged_in_area > div.tabs > div.tab > div.proposal:not(:last-child) {
-    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
 }
 
 /* proposal title */
