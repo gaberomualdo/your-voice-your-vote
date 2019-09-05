@@ -11,17 +11,57 @@ body {
 
 /* container */
 body > div.container {
-    padding: 3.75rem calc((100% - 750px) / 2);
+    padding: 3.75rem calc((100% - 800px) / 2);
+    padding-top: 0;
     display: block;
     width: 100%;
     box-sizing: border-box;
 }
 
 /* container is full width (apart from a small margin) on smaller screens */
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 800px) {
     body > div.container {
         padding: 2.5rem 0.75rem !important;
     }
+}
+
+/* style back to site button */
+body > div.container > a.back_to_site {
+    float: left;
+    display: block;
+    clear: both;
+    margin-bottom: 2.75rem;
+    height: 3.25rem;
+    padding: 0.875rem;
+    width: auto;
+    box-sizing: border-box;
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    transition: padding-left 0.15s;
+}
+body > div.container > a.back_to_site > * {
+    display: block;
+    float: left;
+}
+body > div.container > a.back_to_site > svg {
+    height: 100%;
+    width: auto;
+    transform: scale(-1, 1);
+
+}
+body > div.container > a.back_to_site > p {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+    transition: margin-left 0.15s;
+}
+body > div.container > a.back_to_site:hover {
+    padding-left: 0.375rem;
+}
+body > div.container > a.back_to_site:hover p {
+    margin-left: 1.5rem;
 }
 
 /* style container header */
@@ -29,6 +69,7 @@ body > div.container > h1.header {
     text-align: center;
     font-size: 2.75rem;
     line-height: 1.375;
+    clear: both;
 }
 
 /* style footer */
@@ -47,6 +88,13 @@ body > div.container.logged_in > div.login_area {
 }
 
 /* style authenticated area */
+
+/* container */
+body > div.container > div.logged_in_area {
+    display: block;
+    overflow: hidden;
+    height: auto;
+}
 
 /* voting duration input */
 
@@ -95,48 +143,91 @@ body > div.container > div.logged_in_area > div.voting_duration_input > input[ty
     border-color: #222;
 }
 
-/* proposals to approve section */
-body > div.container > div.logged_in_area > ul.proposals_to_approve {
+/* tabs and proposals */
+body > div.container > div.logged_in_area > div.tabs {
+    display: block;
+    width: 100%;
+    float: left;
+    height: auto;
     overflow: hidden;
-    padding: 2rem 0;
+    margin: 2rem 0;
+}
+body > div.container > div.logged_in_area > div.tabs > div.tab {
+    display: block;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    height: auto;
+    overflow: hidden;
+}
+body > div.container > div.logged_in_area > div.tabs > div.tab:first-child {
+    padding-right: 1.5rem;
+    border-right: 1px solid #ccc;
+}
+body > div.container > div.logged_in_area > div.tabs > div.tab:nth-child(2) {
+    padding-left: 1.5rem;
+    border-left: 1px solid #ccc;
+    margin-left: -1px;
+}
+
+/* tab header */
+body > div.container > div.logged_in_area > div.tabs > div.tab > h1.tab_header {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    font-size: 2rem;
 }
 
 /* proposal */
-body > div.container > div.logged_in_area > ul.proposals_to_approve > div.proposal {
+body > div.container > div.logged_in_area > div.tabs > div.tab > div.proposal {
     background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 2rem;
+    border-top: 1px solid #ccc;
+    padding: 1.5rem 0;
     overflow: hidden;
     box-sizing: border-box;
 }
 
 /* margin between proposals */
-body > div.container > div.logged_in_area > ul.proposals_to_approve > div.proposal:not(:last-child) {
-    margin-bottom: 2rem;
+body > div.container > div.logged_in_area > div.tabs > div.tab > div.proposal:not(:last-child) {
+    margin-bottom: 1rem;
 }
 
 /* proposal title */
-body > div.container > div.logged_in_area > ul.proposals_to_approve > div.proposal > h1.title {
-    font-size: 2.25rem;
+body > div.container > div.logged_in_area > div.tabs > div.tab > div.proposal > h1.title {
+    font-size: 1.75rem;
     line-height: 1.35;
 }
 
-/* proposal description */
-body > div.container > div.logged_in_area > ul.proposals_to_approve > div.proposal > p.description {
+/* proposal text */
+body > div.container > div.logged_in_area > div.tabs > div.tab > div.proposal > div {
     font-size: 1rem;
     line-height: 1.5;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    clear: both;
+    float: left;
+}
+body > div.container > div.logged_in_area > div.tabs > div.tab > div.proposal > div > * {
+    display: inline;
+}
+body > div.container > div.logged_in_area > div.tabs > div.tab > div.proposal > div > strong {
+    margin-right: 0.25rem;
 }
 
 /* buttons container  */
-body > div.container > div.logged_in_area > ul.proposals_to_approve > div.proposal > div.buttons_container {
+body > div.container > div.logged_in_area > div.tabs > div.tab > div.proposal > div.buttons_container {
     margin-top: 0.75rem;
 }
 
 /* buttons */
-body > div.container > div.logged_in_area > ul.proposals_to_approve > div.proposal > div.buttons_container > button {
-    margin-right: 1rem;
+body > div.container > div.logged_in_area > div.tabs > div.tab > div.proposal > div.buttons_container > button {
+    margin-right: 0.875rem;
     font-size: 1rem;
     line-height: calc(2rem - 1px);
     height: 2rem;
@@ -150,7 +241,7 @@ body > div.container > div.logged_in_area > ul.proposals_to_approve > div.propos
 }
 
 /* buttons hover */
-body > div.container > div.logged_in_area > ul.proposals_to_approve > div.proposal > div.buttons_container > button:hover {
+body > div.container > div.logged_in_area > div.tabs > div.tab > div.proposal > div.buttons_container > button:hover {
     background-color: #222;
     color: #fff;
     border-color: #222;
