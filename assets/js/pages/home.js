@@ -131,7 +131,7 @@ const voteAgainstProposal = (proposalID) => {
         // remove loading icon as database has loaded
         (() => {
             // variable for loading icon container element
-            const loadingIconContainerElement = document.querySelector("body > div.container > div.loading_icon_container");
+            const loadingIconContainerElement = document.querySelector("body > div.container > div.loading_container");
 
             // remove loading icon container
             loadingIconContainerElement.parentNode.removeChild(loadingIconContainerElement);

@@ -21,8 +21,8 @@
             </ul>
 
             <!-- display loading icon while database is loading -->
-            <div class="loading_icon_container">
-                <div class="loading_icon"></div>
+            <div class="default_style_loading_container loading_container">
+                <div class="default_style_loading_loader"></div>
             </div>
 
             <!-- tabs -->
