@@ -43,6 +43,9 @@ window.addEventListener("load", () => {
 const displayAuthenticationError = (errorMessage) => {
     // make sure page is displayed before anything happens
     document.body.classList.remove("loading_auth");
+    if(window.location.href.split("?")[0] != window.location.href) {
+        window.history.pushState({}, document.title, window.location.href.split("?")[0] );
+    }
 
     // for mobile devices, simply alert; otherwise, display error box
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){

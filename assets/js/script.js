@@ -46,6 +46,9 @@ firebase.auth().onAuthStateChanged((user) => {
         }else{
             // if is currently on index.php, remove loading_auth class from body if present
             document.body.classList.remove("loading_auth");
+            if(window.location.href.split("?")[0] != window.location.href) {
+                window.history.pushState({}, document.title, window.location.href.split("?")[0] );
+            }
         }
     }
 });
