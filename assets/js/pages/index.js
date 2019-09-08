@@ -41,9 +41,8 @@ window.addEventListener("load", () => {
 
 // function for displaying authentication/sign-in error
 const displayAuthenticationError = (errorMessage) => {
-    // make sure page is displayed before anything happens, and remove any GET variables
-    document.body.style.display = "block";
-    window.history.pushState({}, "Go back to main page", "/");
+    // make sure page is displayed before anything happens
+    document.body.classList.remove("loading_auth");
 
     // for mobile devices, simply alert; otherwise, display error box
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){

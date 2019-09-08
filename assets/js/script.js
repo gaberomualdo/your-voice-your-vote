@@ -43,6 +43,9 @@ firebase.auth().onAuthStateChanged((user) => {
         // user is not logged in, so redirect to public homepage if not already in it
         if(PAGEFILE != "index"){
             window.open("index.php", "_self");
+        }else{
+            // if is currently on index.php, remove loading_auth class from body if present
+            document.body.classList.remove("loading_auth");
         }
     }
 });
