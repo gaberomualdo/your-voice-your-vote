@@ -38,6 +38,12 @@ firebase.auth().onAuthStateChanged((user) => {
         // user is logged in, so redirect to logged-in homepage if not already in it
         if(PAGEFILE == "index"){
             window.open("home.php", "_self");
+        }else{
+            // if user logged in and in logged in page, trigger function to set profile picture
+            setProfilePictureImageNav();
+            
+            // if user logged in and in logged in page, trigger function to set profile box display name
+            setProfileBoxName();
         }
     }else{
         // user is not logged in, so redirect to public homepage if not already in it

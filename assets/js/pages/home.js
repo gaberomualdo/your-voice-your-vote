@@ -160,8 +160,6 @@ let proposalsContentList = [];
     });
 })();
 
-console.log(proposalsContentList);
-
 // handle input for search bar
 document.querySelector("body > nav > ul > input.search").addEventListener("input", () => {
     // get new value of search bar (not case sensitive) and put into variable

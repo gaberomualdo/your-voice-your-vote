@@ -297,6 +297,70 @@ body > nav > ul > input.search:focus {
     }
 }
 
+/* profile picture button and popup */
+body > nav > ul > button.profileimage_btn {
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 50%;
+    transition: background-size .2s;
+    border: none;
+    background-size: 2.5rem 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid var(--dark-text-color);
+}
+body > nav > ul > button.profileimage_btn:hover {
+    background-size: 3rem 3rem;
+}
+body > nav > ul > button.profileimage_btn:active {
+    background-size: 2.5rem 2.5rem;
+}
+
+/* profile buttons box */
+body > nav > ul > ul.profile_btns {
+    display: block;
+    overflow: hidden;
+    width: 15rem;
+    position: fixed;
+    top: 5rem;
+    margin: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(38,50,56,0.1);
+    z-index: 9999999999;
+    padding: .5rem 0;
+    border-radius: 4px;
+}
+
+/* profile buttons/list-items */
+body > nav > ul > ul.profile_btns > * {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+body > nav > ul > ul.profile_btns > .button {
+    width: 100%;
+    border: none;
+    background-color: var(--lighter-color);
+    transition: background-color .2s, color .2s;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0rem;
+    font-size: 1.05rem;
+}
+body > nav > ul > ul.profile_btns > .button:hover {
+    background-color: var(--theme-color);
+    color: #ffffff;
+}
+
+
 /* footer */
 body > footer {
     padding-bottom: 1.25rem;
