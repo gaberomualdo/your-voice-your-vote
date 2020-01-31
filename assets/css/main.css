@@ -389,12 +389,15 @@ body > nav > ul > ul.profile_btns > .button {
     font-weight: 600;
     letter-spacing: 0rem;
     font-size: 1.05rem;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
 }
 body > nav > ul > ul.profile_btns > .button:hover {
     background-color: var(--theme-color);
     color: #ffffff;
+}
+
+body > nav > ul > ul.profile_btns > .button:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 /* profile buttons box welcome area */

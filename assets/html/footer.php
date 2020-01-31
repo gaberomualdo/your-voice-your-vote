@@ -15,7 +15,6 @@
         echo '
         <ul class="links">
             <a href="assets/txt/privacy_policy.txt" target="_blank">Privacy Policy</a>
-            <a class="logout">Sign Out</a>
         </ul>';
     }
     ?>

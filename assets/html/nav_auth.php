@@ -92,7 +92,7 @@
             })();
             ?>
             </li>
-            <li class="button sign_out_btn">
+            <li class="button logout_btn">
                 Sign Out
             </li>
         </ul>
