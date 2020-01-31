@@ -84,7 +84,7 @@
                 echo "<span class='display_name'></span>";
 
                 // language footnote
-                echo "<span class=''>";
+                echo "<span class='language'>";
 
                 echo "You just learned how to say hello " . $chosenWelcomeMessage["languageText"] . ".";
 
