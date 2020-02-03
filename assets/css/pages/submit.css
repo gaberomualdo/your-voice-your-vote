@@ -8,7 +8,7 @@ body > div.container {
 
 /* style block */
 body > div.container > div.block {
-    background-color: #fff;
+    background-color: var(--white-color);
     box-shadow: 0 0 10px 4px var(--lighter-color), 0 0 0 transparent;
     border-radius: 5px;
     padding: 2rem;
@@ -85,9 +85,9 @@ body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=
     line-height: 1.5rem;
     padding: calc(0.5rem - 1px) 0.75rem;
     border: 1px solid var(--light-color);
-    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, height 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, height 0.3s ease-in-out, transform 0.3s;
     border-radius: 3px;
-    box-shadow: 0 0 1px var(--light-color) inset;
+    box-shadow: none;
 }
 
 /* input and textarea error class (add red border) */
@@ -104,7 +104,8 @@ body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=
 /* on focus */
 body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=text]:focus, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus {
     border-color: var(--theme-color);
-    box-shadow: 0 0 1px var(--light-theme-color) inset;
+    box-shadow: 0 1px 4px var(--shadow-color-dark);
+    transform: translateY(-1px);
 }
 
 /* textarea is large when it has content or is focused */
@@ -148,7 +149,7 @@ body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_
     box-sizing: border-box;
     vertical-align: top;
     background-color: var(--theme-color);
-    color: #fff;
+    color: var(--white-color);
     transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
     font-weight: bold;
     cursor: pointer;
@@ -186,7 +187,7 @@ body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_
     background-size: 100%;
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-image: linear-gradient(#fff, #fff), url(../../img/checkbox_checked_icon.png);
+    background-image: linear-gradient(var(--white-color), var(--white-color)), url(../../img/checkbox_checked_icon.png);
     border-radius: 3px;
     box-sizing: border-box;
     border: 2px solid var(--theme-color);

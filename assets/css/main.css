@@ -16,6 +16,11 @@ h6 { line-height: 1.6;  letter-spacing: 0; }
 
 /* CSS variables */
 :root {
+    --white-color: #ffffff;
+
+    --shadow-color-dark: rgba(38,50,56,0.25);
+    --shadow-color: rgba(38,50,56,0.1);
+
     --theme-color: #DA1333;
     --light-theme-color: #EF9A9A;
     --dark-color: #B6102B;
@@ -42,9 +47,44 @@ h6 { line-height: 1.6;  letter-spacing: 0; }
     --base-width: 1100px;
 }
 
+/* CSS variables: DARK MODE 
+body.dark_mode {
+    --white-color: #1E282C;
+
+    --shadow-color-dark: transparent;
+    --shadow-color: transparent;
+
+    --theme-color: #ff143d;
+    --light-theme-color: #EF9A9A;
+    --dark-color: #d80026;
+
+    --light-color: #455A64;
+    --lighter-color: #37474F;
+
+    --text-color: #B0BEC5;
+    --dark-text-color: #CFD8DC;
+    --darker-text-color: #ECEFF1;
+    --medium-text-color: #78909C;
+    --light-text-color: #607D8B;
+    --lighter-text-color: #546E7A;
+
+    /*
+    455A64
+    37474F
+    1E282C
+    607D8B
+    78909C
+    90A4AE
+}*/
+
 /* highlight color */
 ::selection {
     background-color: var(--light-color);
+}
+
+/* site background */
+body {
+    background-color: var(--white-color);
 }
 
 /* global font, color, and no outline */
@@ -147,8 +187,8 @@ body > nav {
     height: 4.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(38,50,56,0.1), 0 0 0 transparent;
+    background-color: var(--white-color);
+    box-shadow: 0 4px 8px var(--shadow-color), 0 0 0 transparent;
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -215,7 +255,7 @@ body > nav > ul > button, body > nav > ul > input, body > nav > ul > p.error_box
 body > nav > ul > button {
     border-color: var(--theme-color);
     background-color: var(--theme-color);
-    color: #fff;
+    color: var(--white-color);
     transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
     font-weight: bold;
     cursor: pointer;
@@ -235,7 +275,7 @@ body > nav > ul > p.error_box {
 
 /* input */
 body > nav > ul > input {
-    box-shadow: 0 0 1px var(--light-color) inset;
+    box-shadow: none;
 }
 body > nav > ul > input.search {
     width: 12.5rem;
@@ -248,7 +288,7 @@ body > nav > ul > input:focus::placeholder {
 }
 body > nav > ul > input:focus {
     border-color: var(--theme-color);
-    box-shadow: 0 0 1px var(--light-theme-color) inset;
+    box-shadow: 0 1px 4px var(--shadow-color-dark);
 }
 body > nav > ul > input.search:focus {
     width: 20rem;
@@ -278,7 +318,7 @@ body > nav > ul > input.search:focus {
         padding-left: 2.2rem;
         padding-right: calc(0.3rem - 2px);
         transition: padding 0.4s ease-in-out, border-color 0.4s ease-in-out, width 0.4s ease-in-out;
-        background-color: #fff;
+        background-color: var(--white-color);
         position: absolute;
         top: 1rem;
         right: 1rem;
@@ -317,7 +357,7 @@ body > nav > ul > button.profileimage_btn {
     background-size: 2.5rem 2.5rem;
     background-repeat: no-repeat;
     background-position: center;
-    border: 1px solid var(--dark-text-color);
+    box-shadow: 0 1px 4px var(--shadow-color-dark);
 }
 body > nav > ul > button.profileimage_btn:hover {
     background-size: 3rem 3rem;
@@ -333,8 +373,8 @@ body > nav > ul > ul.profile_btns {
     position: fixed;
     top: 5rem;
     margin: 0;
-    background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(38,50,56,0.1);
+    background-color: var(--white-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
     border: 1px solid var(--light-color);
     z-index: 9999999999;
     border-radius: 4px;
@@ -351,8 +391,8 @@ body > nav > ul > ul.profile_btns::before {
     content: "";
     position: absolute;
     right: .625rem;
-    background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(38,50,56,0.1);
+    background-color: var(--white-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
     border: 1px solid var(--light-color);
     border-bottom: none;
     border-left: none;
@@ -392,7 +432,7 @@ body > nav > ul > ul.profile_btns > .button {
 }
 body > nav > ul > ul.profile_btns > .button:hover {
     background-color: var(--theme-color);
-    color: #ffffff;
+    color: var(--white-color);
 }
 
 body > nav > ul > ul.profile_btns > .button:last-child {

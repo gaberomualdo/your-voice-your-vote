@@ -102,7 +102,7 @@ body > div.container.search_results_shown > div.tabs > div > div.proposal_block:
 
 /* style proposal block */
 body > div.container > div.tabs > div > div.proposal_block {
-    background-color: #fff;
+    background-color: var(--white-color);
     box-shadow: 0 0 10px 4px var(--lighter-color), 0 0 0 transparent;
     border-radius: 5px;
     padding: 2rem;
@@ -306,11 +306,11 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2
 
 /* active voting button */
 body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:first-child > button.active {
-    box-shadow: 0 0 0 2px #fff,
+    box-shadow: 0 0 0 2px var(--white-color),
     0 0 0 4px var(--green-color);
 }
 body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:last-child > button.active {
-    box-shadow: 0 0 0 2px #fff,
+    box-shadow: 0 0 0 2px var(--white-color),
     0 0 0 4px var(--red-color);
 }
 
@@ -318,7 +318,7 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2
 body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container > button > p {
     font-size: 0.9rem;
     line-height: 2.5rem;
-    color: #fff;
+    color: var(--white-color);
     font-weight: bold;
 }
 body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container > button > svg {
@@ -326,7 +326,7 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2
     width: 1.5rem;
     box-sizing: border-box;
     padding: 0.65rem 0.125rem;
-    fill: #fff;
+    fill: var(--white-color);
     margin-right: 0.5rem;
 }
 
@@ -355,7 +355,7 @@ body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2
     position: absolute;
     height: 2rem;
     line-height: 2rem;
-    color: #fff;
+    color: var(--white-color);
     top: calc(0.25rem + 2.5px);
     font-weight: bold;
     font-size: 0.9rem;
