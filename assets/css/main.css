@@ -47,9 +47,9 @@ h6 { line-height: 1.6;  letter-spacing: 0; }
     --base-width: 1100px;
 }
 
-/* CSS variables: DARK MODE 
+/* CSS variables: DARK MODExs
 body.dark_mode {
-    --white-color: #1E282C;
+    /*--white-color: #1E282C;
 
     --shadow-color-dark: transparent;
     --shadow-color: transparent;
@@ -66,7 +66,7 @@ body.dark_mode {
     --darker-text-color: #ECEFF1;
     --medium-text-color: #78909C;
     --light-text-color: #607D8B;
-    --lighter-text-color: #546E7A;
+    --lighter-text-color: #546E7A;*/
 
     /*
     455A64

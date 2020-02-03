@@ -5,7 +5,7 @@
 <html lang="en">
     <!-- include HEAD tag -->
     <?php include "assets/html/head.php" ?>
-    <body>
+    <body class="dark_mode">
         <!-- include navbar -->
         <?php include "assets/html/nav_auth.php" ?>
 
