@@ -436,8 +436,17 @@ body > nav > ul > ul.profile_btns > .button:hover {
 }
 
 body > nav > ul > ul.profile_btns > .button:last-child {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+    margin-bottom: -1px;
+    border: 1px solid var(--light-color);
+    border-top: none;
+    transition: background-color .2s, color .2s, border-color .2s;
+}
+body > nav > ul > ul.profile_btns > .button:last-child:hover {
+    border-color: var(--theme-color);
 }
 
 /* profile buttons box welcome area */
