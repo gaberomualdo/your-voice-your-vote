@@ -75,9 +75,7 @@ const updateProfilePictureBoxSize = () => {
     // full available area in px
     const availableArea = window.innerWidth - profilePictureBtnElmRightOffset - getREM(1);
 
-    console.log(availableArea);
-    console.log(getREM(20));
-
+    // set width of profile buttons box according to available area compared to 20rem (default width of profile buttons box)
     if(availableArea < getREM(20)) {
         document.querySelector("body > nav > ul > ul.profile_btns").style.width = availableArea + "px";
     }else {

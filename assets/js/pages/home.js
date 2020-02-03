@@ -116,17 +116,26 @@ const voteAgainstProposal = (proposalID) => {
             });
         }
 
-        // set width of voting progress bar
-        (() => {
+        // set width of voting progress bar and continue to do so when window is resized
+        const setWidthOfVotingProgressBar = () => {
+            console.log("ran");
+
             // get width of vote against button
-            const voteAgainstButtonWidth = document.querySelector("body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:first-child").offsetWidth;
+            let voteAgainstButtonWidth = document.querySelector("body > div.container > div.tabs > div > div.proposal_block:first-child > div.row:nth-child(2) > div.voting_button_container:first-child").offsetWidth;
             
             // get width of vote for button
-            const voteForButtonWidth = document.querySelector("body > div.container > div.tabs > div > div.proposal_block > div.row:nth-child(2) > div.voting_button_container:last-child").offsetWidth;
+            let voteForButtonWidth = document.querySelector("body > div.container > div.tabs > div > div.proposal_block:first-child > div.row:nth-child(2) > div.voting_button_container:last-child").offsetWidth;
+
+            // margin for error
+            voteAgainstButtonWidth += .5;
+            voteForButtonWidth += .5;
 
             // set voting progress width variable
             document.querySelector("body > div.container > div.tabs").setAttribute("style", "--voting-progress-width: calc(100% - " + (voteForButtonWidth + voteAgainstButtonWidth) + "px);");
-        })();
+        };
+
+        setWidthOfVotingProgressBar();
+        window.addEventListener("resize", setWidthOfVotingProgressBar);
 
         // remove loading icon as database has loaded
         (() => {
