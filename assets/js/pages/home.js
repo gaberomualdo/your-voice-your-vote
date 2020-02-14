@@ -56,6 +56,9 @@ const voteAgainstProposal = (proposalID) => {
             // the vote the current user cast
             let currentUserVote = null;
 
+            // user email hashed string --> e.g. "john_smith" if email is "john_smith@school.edu"
+            user_email_hash = getSHA256Hash(authObj.currentUser.email.split("@")[0]);
+
             // calculate how many votes for and against, and what vote the current user cast
             let votesFor = 0;
             let votesAgainst = 0;
@@ -67,9 +70,6 @@ const voteAgainstProposal = (proposalID) => {
                     // add to votesFor variable if vote is against
                     votesAgainst++;
                 }
-
-                // user email hashed string --> e.g. "john_smith" if email is "john_smith@school.edu"
-                user_email_hash = getSHA256Hash(authObj.currentUser.email.split("@")[0]);
 
                 // if vote was either for or against, and it was cast by current user, then set the currentUserVote variable
                 if((currentProposal.voters[voter] == "against" || currentProposal.voters[voter] == "for") && voter == user_email_hash) {
@@ -115,7 +115,7 @@ const voteAgainstProposal = (proposalID) => {
                     }
 
                     // if vote was either for or against, and it was cast by current user, then set the currentUserVote variable
-                    if((databaseProposalContent.voters[voter] == "against" || databaseProposalContent.voters[voter] == "for") && voter == authObj.currentUser.email.split("@")[0]) {
+                    if((databaseProposalContent.voters[voter] == "against" || databaseProposalContent.voters[voter] == "for") && voter == user_email_hash) {
                         currentUserVote = databaseProposalContent.voters[voter];
                     }
                 }
@@ -127,8 +127,6 @@ const voteAgainstProposal = (proposalID) => {
 
         // set width of voting progress bar and continue to do so when window is resized
         const setWidthOfVotingProgressBar = () => {
-            console.log("ran");
-
             // get width of vote against button
             let voteAgainstButtonWidth = document.querySelector("body > div.container > div.tabs > div > div.proposal_block:first-child > div.row:nth-child(2) > div.voting_button_container:first-child").offsetWidth;
             
