@@ -360,7 +360,7 @@ body > nav > ul > button.profileimage_btn {
     box-shadow: 0 1px 4px var(--shadow-color-dark);
 }
 body > nav > ul > button.profileimage_btn:hover {
-    background-size: 3rem 3rem;
+    background-size: 2.75rem 2.75rem;
     opacity: 1;
 }
 body > nav > ul > button.profileimage_btn:active {
@@ -443,7 +443,7 @@ body > nav > ul > ul.profile_btns > .button:last-child {
     margin-bottom: -1px;
     border: 1px solid var(--light-color);
     border-top: none;
-    transition: background-color .2s, color .2s, border-color .2s;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out, border-color .2s ease-in-out;
 }
 body > nav > ul > ul.profile_btns > .button:last-child:hover {
     border-color: var(--theme-color);
