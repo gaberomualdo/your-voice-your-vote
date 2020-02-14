@@ -1,5 +1,8 @@
 <!-- this include file imports all necessary scripts for the page -->
 
+<!-- import SHA-256 library for hashing -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.3.1/sha256.js"></script>
+
 <!-- import firebase for authentication and database -->
 <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>

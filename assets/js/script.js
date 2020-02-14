@@ -58,3 +58,10 @@ firebase.auth().onAuthStateChanged((user) => {
         }
     }
 });
+
+// SHA
+const getSHA256Hash = (text) => {
+	const shaObj = new jsSHA("SHA-256", "TEXT");
+	shaObj.update(text);
+	return shaObj.getHash("HEX");
+}

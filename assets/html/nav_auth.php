@@ -66,11 +66,11 @@
                     [
                         "text"         => "Hej",
                         "languageText" => "in Swedish"
-                    ],
+                    ]/*,
                     [
                         "text"         => "Wagwan",
                         "languageText" => "like a roadman"
-                    ]
+                    ]*/
                 ];
 
                 // show welcome message in random language

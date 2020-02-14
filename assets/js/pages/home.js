@@ -22,10 +22,16 @@ const authObj = firebase.auth();
 
 // click functions for vote for and vote against for each proposal
 const voteForProposal = (proposalID) => {
-    databaseObj.ref("proposals/" + proposalID + "/voters/" + authObj.currentUser.email.split("@")[0] + "/").set("for");
+    // user email string to be hashed --> e.g. "john_smith" if email is "john_smith@school.edu"
+    user_email_string = (authObj.currentUser.email.split("@")[0]);
+    
+    databaseObj.ref("proposals/" + proposalID + "/voters/" + getSHA256Hash(user_email_string) + "/").set("for");
 }
 const voteAgainstProposal = (proposalID) => {
-    databaseObj.ref("proposals/" + proposalID + "/voters/" + authObj.currentUser.email.split("@")[0] + "/").set("against");
+    // user email string to be hashed --> e.g. "john_smith" if email is "john_smith@school.edu"
+    user_email_string = (authObj.currentUser.email.split("@")[0]);
+    
+    databaseObj.ref("proposals/" + proposalID + "/voters/" + getSHA256Hash(user_email_string) + "/").set("against");
 }
 
 // functions and features that utilize database are put in this IIFE
@@ -62,8 +68,11 @@ const voteAgainstProposal = (proposalID) => {
                     votesAgainst++;
                 }
 
+                // user email hashed string --> e.g. "john_smith" if email is "john_smith@school.edu"
+                user_email_hash = getSHA256Hash(authObj.currentUser.email.split("@")[0]);
+
                 // if vote was either for or against, and it was cast by current user, then set the currentUserVote variable
-                if((currentProposal.voters[voter] == "against" || currentProposal.voters[voter] == "for") && voter == authObj.currentUser.email.split("@")[0]) {
+                if((currentProposal.voters[voter] == "against" || currentProposal.voters[voter] == "for") && voter == user_email_hash) {
                     currentUserVote = currentProposal.voters[voter];
                 }
             }
