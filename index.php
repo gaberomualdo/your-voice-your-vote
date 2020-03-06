@@ -62,6 +62,11 @@
         <!-- include footer -->
         <?php include "assets/html/footer.php" ?>
 
+        <!-- hashed testing password -->
+        <script>
+        const TESTING_HASHED_PASSWORD = "9a71f5b028fe64d2b4da84e5ffcb7c9f37e1809d4c744b6d1affc783ef9f327c";
+        </script>
+
         <!-- include scripts -->
         <?php include "assets/html/scripts.php" ?>
     </body>

@@ -99,7 +99,13 @@ document.querySelector("body > nav > ul > button.login").addEventListener("click
 	if(!navigator.onLine){
         displayAuthenticationError("No Internet Connection");
         return;
-	}
+    }
+    
+    // Check for testing password
+    if(getSHA256Hash(prompt("Enter Testing Password: ")) != TESTING_HASHED_PASSWORD) {
+        displayAuthenticationError("Testing Password Incorrect.");
+        return;
+    }
 
 	// Check if firebase exists, if not: server error
 	if(typeof firebase == "undefined"){
