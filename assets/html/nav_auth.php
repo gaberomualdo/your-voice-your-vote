@@ -7,7 +7,7 @@
     <!-- submit, search, and logout (logout is removed for now) -->
     <ul>
         <!-- search bar is only displayed in logged-in homepage -->
-        <?php if($pagefile == "home") { echo '<input type="text" class="search" placeholder="Search Proposals..." spellcheck="false">'; } ?>
+        <?php if($pagefile == "home") { echo '<input type="text" class="search" placeholder="Search Posts..." spellcheck="false">'; } ?>
         <button class="submit" onclick="window.open('submit.php', '_self');">Make a Post</button>
         <!--<button class="log_out">Log Out</button>-->
 
