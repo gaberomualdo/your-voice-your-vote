@@ -14,7 +14,6 @@
     if($pagefile != "index"){
         echo '
         <ul class="links">
-            <a href="assets/txt/privacy_policy.txt" target="_blank">Privacy Policy</a>
         </ul>';
     }
     ?>

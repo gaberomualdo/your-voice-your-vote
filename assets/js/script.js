@@ -22,46 +22,34 @@ firebase.initializeApp(FIREBASE_CONFIG_OBJ);
 
 // this function will execute after page has loaded and user either is logged in, or logs out
 firebase.auth().onAuthStateChanged((user) => {
-    if(user && !user.email.endsWith(SCHOOL_EMAIL_DOMAIN)) {
-        // user is logged in, but user is using an email address not
-        // hosted on school domain, so display error and delete user
-        // if at homepage; else, go to homepage.
-        if(PAGEFILE == "index"){
-            // display error in homepage, and then delete user
-            displayAuthenticationError("Please use an @"  + SCHOOL_EMAIL_DOMAIN + " email address.");
-            firebase.auth().currentUser.delete();
-        }else {
-            // go to homepage
-            window.open("index.php", "_self");
-        }
-    }else if(user){
-        // user is logged in, so redirect to logged-in homepage if not already in it
-        if(PAGEFILE == "index"){
-            window.open("home.php", "_self");
-        }else{
-            // if user logged in and in logged in page, trigger function to set profile picture
-            setProfilePictureImageNav();
-            
-            // if user logged in and in logged in page, trigger function to set profile box display name
-            setProfileBoxName();
-        }
-    }else{
-        // user is not logged in, so redirect to public homepage if not already in it
-        if(PAGEFILE != "index"){
-            window.open("index.php", "_self");
-        }else{
-            // if is currently on index.php, remove loading_auth class from body if present
-            document.body.classList.remove("loading_auth");
-            if(window.location.href.split("?")[0] != window.location.href) {
-                window.history.pushState({}, document.title, window.location.href.split("?")[0] );
-            }
-        }
+  if (user) {
+    // user is logged in, so redirect to logged-in homepage if not already in it
+    if (PAGEFILE == 'index') {
+      window.open('home.php', '_self');
+    } else {
+      // if user logged in and in logged in page, trigger function to set profile picture
+      setProfilePictureImageNav();
+
+      // if user logged in and in logged in page, trigger function to set profile box display name
+      setProfileBoxName();
     }
+  } else {
+    // user is not logged in, so redirect to public homepage if not already in it
+    if (PAGEFILE != 'index') {
+      window.open('index.php', '_self');
+    } else {
+      // if is currently on index.php, remove loading_auth class from body if present
+      document.body.classList.remove('loading_auth');
+      if (window.location.href.split('?')[0] != window.location.href) {
+        window.history.pushState({}, document.title, window.location.href.split('?')[0]);
+      }
+    }
+  }
 });
 
 // SHA
 const getSHA256Hash = (text) => {
-	const shaObj = new jsSHA("SHA-256", "TEXT");
-	shaObj.update(text);
-	return shaObj.getHash("HEX");
-}
+  const shaObj = new jsSHA('SHA-256', 'TEXT');
+  shaObj.update(text);
+  return shaObj.getHash('HEX');
+};

@@ -89,8 +89,8 @@ const loginToSubmissionPlatform = () => {
                         
                         <!-- approve and reject proposal buttons -->
                         <div class="buttons_container">
-                            <button class="approve" onclick="if(confirm('Approve this proposal?')){ approveProposal('${objectID}'); }">Approve Proposal</button>
-                            <button class="reject" onclick="if(confirm('Reject this proposal?')){ rejectProposal('${objectID}'); alert('Proposal was by: ${submissionPlatformContent[objectID].proposer.email}'); }">Reject Proposal</button>
+                            <button class="approve" onclick="if(confirm('Approve this proposal?')){ approveProposal('${objectID}'); }">Approve Post</button>
+                            <button class="reject" onclick="if(confirm('Reject this proposal?')){ rejectProposal('${objectID}'); alert('Proposal was by: ${submissionPlatformContent[objectID].proposer.email}'); }">Reject Post</button>
                         </div>
                     </div>
                     ` + proposalsToApproveElement.innerHTML;
@@ -121,19 +121,17 @@ const loginToSubmissionPlatform = () => {
                         <div class="description"><strong>Description: </strong><p>${proposalsDatabaseContent[objectID].description}</p></div>
                         <div class="proposer"><strong>Proposer: </strong><p>${proposalsDatabaseContent[objectID].proposer.email}</p></div>
                         <div class="date_of_completion"><strong>Date of Completion: </strong><p>${proposalsDatabaseContent[objectID].date_of_completion}</p></div>
-                        <div class="votes_for"><strong>Votes For: </strong><p>${proposalsDatabaseContent[objectID].voters ? Array.from(Object.values(proposalsDatabaseContent[objectID].voters)).count("for").toString() : "0"}</p></div>
-                        <div class="votes_against"><strong>Votes Against: </strong><p>${proposalsDatabaseContent[objectID].voters ? Array.from(Object.values(proposalsDatabaseContent[objectID].voters)).count("against").toString() : "0"}</p></div>
 
                         <!-- rescind proposal button -->
                         <div class="buttons_container">
-                            <button class="rescind" onclick="if(confirm('Rescind this proposal?')){ rescindProposal('${objectID}'); }">Rescind Proposal</button>
+                            <button class="rescind" onclick="if(confirm('Rescind this proposal?')){ rescindProposal('${objectID}'); }">Rescind Post</button>
                         </div>
                     </div>
                     ` + activeProposalsElement.innerHTML;
                 }
 
                 // tab header
-                activeProposalsElement.innerHTML = `<h1 class="tab_header">Active Proposals</h1>` + activeProposalsElement.innerHTML;
+                activeProposalsElement.innerHTML = `<h1 class="tab_header">Active Posts</h1>` + activeProposalsElement.innerHTML;
             });
         } else {
             // if password was incorrect or there was an error with the request, alert to user, and focus password input

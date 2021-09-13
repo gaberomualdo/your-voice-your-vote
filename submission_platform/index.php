@@ -55,18 +55,18 @@
             <div class="logged_in_area">
                 <!-- input box to enter voting duration in days -->
                 <div class="voting_duration_input">
-                    <strong>Proposal Voting Duration: </strong>
-                    <input type="number" value="7" min="0" max="365">
+                    <strong>Post Active Duration: </strong>
+                    <input type="number" value="31" min="0" max="100000">
                     <p>days</p>
                 </div>
 
                 <!-- tabs with proposals to approve and active proposals -->
                 <div class="tabs">
                     <div class="proposals_to_approve tab">
-                        <h1 class="tab_header">Submission Platform</h1>
+                        <h1 class="tab_header">Submissions</h1>
                     </div>
                     <div class="active_proposals tab">
-                        <h1 class="tab_header">Active Proposals</h1>
+                        <h1 class="tab_header">Active Posts</h1>
                     </div>
                 </div>
             </div>

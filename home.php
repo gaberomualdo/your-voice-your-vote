@@ -15,8 +15,8 @@
             
             <!-- tab buttons -->
             <ul class="tabButtons">
-                <li class="openProposalsButton">Open Proposals</li>
-                <li class="completedProposalsButton">Completed Proposals</li>
+                <li class="openProposalsButton">Active Posts</li>
+                <li class="completedProposalsButton">Archived Posts</li>
                 <li class="searchResultsButton">Search Results</li>
             </ul>
 
@@ -43,6 +43,7 @@
         <?php include "assets/html/scripts.php" ?>
 
         <!-- import script to generate HTML for proposal block -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
         <script src="assets/html/proposal_block.js"></script>
     </body>
 </html>

@@ -8,7 +8,7 @@
     <ul>
         <!-- search bar is only displayed in logged-in homepage -->
         <?php if($pagefile == "home") { echo '<input type="text" class="search" placeholder="Search Proposals..." spellcheck="false">'; } ?>
-        <button class="submit" onclick="window.open('submit.php', '_self');">Submit a Proposal</button>
+        <button class="submit" onclick="window.open('submit.php', '_self');">Make a Post</button>
         <!--<button class="log_out">Log Out</button>-->
 
         <!-- profile image button, which triggers the profile buttons box open -->

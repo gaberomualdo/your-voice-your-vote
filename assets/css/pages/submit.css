@@ -2,219 +2,223 @@
 
 /* style container */
 body > div.container {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 /* style block */
 body > div.container > div.block {
-    background-color: var(--white-color);
-    box-shadow: 0 0 10px 4px var(--lighter-color), 0 0 0 transparent;
-    border-radius: 5px;
-    padding: 2rem;
-    overflow: hidden;
+  background-color: var(--white-color);
+  box-shadow: 0 0 10px 4px var(--lighter-color), 0 0 0 transparent;
+  border-radius: 5px;
+  padding: 2rem;
+  overflow: hidden;
 }
 
 /* style rows */
 body > div.container > div.block > div.row {
-    float: left;
-    width: 100%;
-    clear: both;
+  float: left;
+  width: 100%;
+  clear: both;
 }
 
 /* style top row with header and description */
 body > div.container > div.block > div.row:first-child {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* style columns in second row */
 body > div.container > div.block > div.row > div.col {
-    width: 50%;
-    float: left;
-    box-sizing: border-box;
+  width: 100% !important;
+  float: left;
+  box-sizing: border-box;
+  clear: both;
 }
-
 /* on mobile views, columns are full width and act as rows */
 @media only screen and (max-width: 850px) {
-    body > div.container > div.block > div.row > div.col {
-        width: 100%;
-        clear: both;
-    }
+  body > div.container > div.block > div.row > div.col {
+  }
 
-    /* margin between columns as they are now placed vertically */
-    body > div.container > div.block > div.row > div.col:not(:last-child) {
-        margin-bottom: 2.5rem;
-    }
+  /* margin between columns as they are now placed vertically */
+  body > div.container > div.block > div.row > div.col:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
 }
 
 /* description */
 body > div.container > div.block:first-child > div.row:nth-child(2) > div.description {
-    font-size: 1rem;
-    line-height: 1.5;
-    padding-right: 2.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-right: 2.5rem;
 }
 
 /* description "headers" */
 body > div.container > div.block:first-child > div.row:nth-child(2) > div.description > p:not(:first-child) {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 /* description lists */
 body > div.container > div.block:first-child > div.row:nth-child(2) > div.description > ul {
-    padding-left: 3rem;
-    margin-top: 0.75rem;
+  padding-left: 3rem;
+  margin-top: 0.75rem;
 }
 
 /* style submission form */
 
 /* style all direct children (global) */
 body > div.container > div.block > div.row:nth-child(2) > div.form > *:not(:last-child) {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* input and textarea global styles */
-body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=text], body > div.container > div.block > div.row:nth-child(2) > div.form > textarea {
-    outline: none;
-    width: 100%;
-    float: left;
-    display: block;
-    box-sizing: border-box;
-    resize: none;
-    font-size: 1rem;
-    height: 2.5rem;
-    line-height: 1.5rem;
-    padding: calc(0.5rem - 1px) 0.75rem;
-    border: 1px solid var(--light-color);
-    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, height 0.3s ease-in-out, transform 0.3s;
-    border-radius: 3px;
-    box-shadow: none;
+body > div.container > div.block > div.row:nth-child(2) > div.form > input[type='text'],
+body > div.container > div.block > div.row:nth-child(2) > div.form > textarea {
+  outline: none;
+  width: 100%;
+  float: left;
+  display: block;
+  box-sizing: border-box;
+  resize: none;
+  font-size: 1rem;
+  height: 2.5rem;
+  line-height: 1.5rem;
+  padding: calc(0.5rem - 1px) 0.75rem;
+  border: 1px solid var(--light-color);
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, height 0.3s ease-in-out, transform 0.3s;
+  border-radius: 3px;
+  box-shadow: none;
 }
 
 /* input and textarea error class (add red border) */
-body > div.container > div.block > div.row:nth-child(2) > div.form > input.error[type=text], body > div.container > div.block > div.row:nth-child(2) > div.form > textarea.error {
-    transition: color 0s ease-in-out, border-color 0s ease-in-out, box-shadow 0.3s ease-in-out, height 0.3s ease-in-out;
-    border-color: var(--red-color);
+body > div.container > div.block > div.row:nth-child(2) > div.form > input.error[type='text'],
+body > div.container > div.block > div.row:nth-child(2) > div.form > textarea.error {
+  transition: color 0s ease-in-out, border-color 0s ease-in-out, box-shadow 0.3s ease-in-out, height 0.3s ease-in-out;
+  border-color: var(--red-color);
 }
 
 /* style placeholders */
-body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=text]::placeholder, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea::placeholder {
-    color: var(--lighter-text-color);
+body > div.container > div.block > div.row:nth-child(2) > div.form > input[type='text']::placeholder,
+body > div.container > div.block > div.row:nth-child(2) > div.form > textarea::placeholder {
+  color: var(--lighter-text-color);
 }
 
 /* on focus */
-body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=text]:focus, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus {
-    border-color: var(--theme-color);
-    box-shadow: 0 1px 4px var(--shadow-color-dark);
-    transform: translateY(-1px);
+body > div.container > div.block > div.row:nth-child(2) > div.form > input[type='text']:focus,
+body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus {
+  border-color: var(--theme-color);
+  box-shadow: 0 1px 4px var(--shadow-color-dark);
 }
 
 /* textarea is large when it has content or is focused */
-body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:not(:placeholder-shown) {
-    height: calc(1rem + (1.5rem * 8));
+body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus,
+body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:not(:placeholder-shown) {
+  height: calc(1rem + (1.5rem * 8));
 }
 
-body > div.container > div.block > div.row:nth-child(2) > div.form > input[type=text]:focus::placeholder, body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus::placeholder {
-    color: var(--light-text-color);
+body > div.container > div.block > div.row:nth-child(2) > div.form > input[type='text']:focus::placeholder,
+body > div.container > div.block > div.row:nth-child(2) > div.form > textarea:focus::placeholder {
+  color: var(--light-text-color);
 }
 
 /* on mobile views, textarea is always large */
 @media only screen and (max-width: 650px) {
-    body > div.container > div.block > div.row:nth-child(2) > div.form > textarea {
-        height: calc(1rem + (1.5rem * 10)) !important;
-    }
+  body > div.container > div.block > div.row:nth-child(2) > div.form > textarea {
+    height: calc(1rem + (1.5rem * 10)) !important;
+  }
 }
 
 /* button container */
 body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container {
-    float: left;
-    width: 100%;
-    min-height: 2.5rem;
-    user-select: none;
+  float: left;
+  width: 100%;
+  min-height: 2.5rem;
+  user-select: none;
 }
 
 /* button container direct children */
 body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > * {
-    float: left;
-    display: block;
-    height: 2.5rem;
+  float: left;
+  display: block;
+  height: 2.5rem;
 }
 
 /* "submit proposal" button */
 body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > button {
-    line-height: calc(2.5rem - 1px);
-    font-size: 0.9rem;
-    padding: 0 0.75rem;
-    border: 1px solid var(--theme-color);
-    border-radius: 3px;
-    box-sizing: border-box;
-    vertical-align: top;
-    background-color: var(--theme-color);
-    color: var(--white-color);
-    transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 1.25rem;
+  line-height: calc(2.5rem - 1px);
+  font-size: 0.9rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--theme-color);
+  border-radius: 3px;
+  box-sizing: border-box;
+  vertical-align: top;
+  background-color: var(--theme-color);
+  color: var(--white-color);
+  transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 1.25rem;
 }
 
 /* button hover */
 body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > button:hover {
-    background-color: var(--dark-color);
-    border-color: var(--dark-color);
+  background-color: var(--dark-color);
+  border-color: var(--dark-color);
 }
 
 /* checkbox container */
-body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox {
-    height: 2.5rem;
-    box-sizing: border-box;
-    padding: 0.625rem 0;
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.checkbox {
+  height: 2.5rem;
+  box-sizing: border-box;
+  padding: 0.625rem 0;
+  margin-right: 1.25rem;
 }
 
 /* checkbox container direct children */
-body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox > * {
-    display: block;
-    float: left;
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.checkbox > * {
+  display: block;
+  float: left;
 }
 
 /* don't display the actual checkbox */
-body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox > input[type=checkbox] {
-    display: none;
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.checkbox > input[type='checkbox'] {
+  display: none;
 }
 
 /* style checkbox label (effectively IS the checkbox) */
-body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox > input[type=checkbox] + label {
-    width: 1.25rem;
-    height: 1.25rem;
-    background-size: 100%;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(var(--white-color), var(--white-color)), url(../../img/checkbox_checked_icon.png);
-    border-radius: 3px;
-    box-sizing: border-box;
-    border: 2px solid var(--theme-color);
-    cursor: pointer;
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.checkbox > input[type='checkbox'] + label {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-size: 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(var(--white-color), var(--white-color)), url(../../img/checkbox_checked_icon.png);
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 2px solid var(--theme-color);
+  cursor: pointer;
 }
 
 /* checkbox label when checkbox is checked */
-body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox > input[type=checkbox]:checked + label {
-    background-image: url(../../img/checkbox_checked_icon.png);
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.checkbox > input[type='checkbox']:checked + label {
+  background-image: url(../../img/checkbox_checked_icon.png);
 }
 
 /* checkbox "submit anonymously" text */
-body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.submit_anon_checkbox > label.text {
-    font-size: 0.85rem;
-    padding-left: 0.5rem;
-    line-height: 1.25rem;
-    color: var(--text-color);
-    cursor: pointer;
+body > div.container > div.block > div.row:nth-child(2) > div.form > div.button_container > div.checkbox > label.text {
+  font-size: 0.85rem;
+  padding-left: 0.5rem;
+  line-height: 1.25rem;
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 /* style third row with text about submission process (shown after user has submitted a proposal) */
 body > div.container > div.block:first-child > div.row:nth-child(3) {
-    font-size: 1rem;
-    line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* description "headers" */
 body > div.container > div.block:first-child > div.row:nth-child(3) > p:not(:last-child) {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
